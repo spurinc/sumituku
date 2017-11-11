@@ -12,7 +12,8 @@
 
 <p>
   <strong>Furniture image:</strong>
-  <%= @furniture.furniture_image %>
+  <%#= image_tag @post.image_url %>
+  <%= image_tag @furniture.furniture_image %>
 </p>
 
 <%= link_to 'Edit', edit_furniture_path(@furniture) %> |
