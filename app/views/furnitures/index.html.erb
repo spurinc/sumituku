@@ -2,7 +2,26 @@
 
 <h1>Furnitures</h1>
 
-<table>
+    <% @furnitures.each do |furniture| %>
+      <div>
+        <div class="furniture_img_block">
+          <%= image_tag furniture.furniture_image %>
+        </div>
+        <div>
+          <h3><%= furniture.name %></h3>
+          <p><%= furniture.category %></p>
+          <p>
+          <%= link_to 'Show', furniture %>
+          <%= link_to 'Edit', edit_furniture_path(furniture) %>
+          <%= link_to 'Destroy', furniture, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </p>
+          </div>
+      </div>
+    <% end %>
+
+
+
+<!-- <table>
   <thead>
     <tr>
       <th>Name</th>
@@ -12,19 +31,19 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @furnitures.each do |furniture| %>
-      <tr>
-        <td><%= furniture.name %></td>
-        <td><%= furniture.category %></td>
-        <td><%= furniture.furniture_image %></td>
-        <td><%= link_to 'Show', furniture %></td>
-        <td><%= link_to 'Edit', edit_furniture_path(furniture) %></td>
-        <td><%= link_to 'Destroy', furniture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <tbody> -->
+    <!-- <%# @furnitures.each do |furniture| %> -->
+      <!-- <tr> -->
+        <!-- <td><%#= image_tag furniture.furniture_image %></td> -->
+        <!-- <td><%#= furniture.name %></td> -->
+        <!-- <td><%#= furniture.category %></td> -->
+        <!-- <td><%#= link_to 'Show', furniture %></td> -->
+        <!-- <td><%#= link_to 'Edit', edit_furniture_path(furniture) %></td> -->
+        <!-- <td><%#= link_to 'Destroy', furniture, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+      <!-- </tr> -->
+    <!-- <%# end %> -->
+<!--   </tbody>
+</table> -->
 
 <br>
 
