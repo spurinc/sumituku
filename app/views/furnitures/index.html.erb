@@ -10,6 +10,9 @@
         <div>
           <h3><%= furniture.name %></h3>
           <p><%= furniture.category %></p>
+          <p><%= sanitize(simple_format(furniture.furniture_about), :tags => %w(p br)) %>
+          </p>
+          <p><%= furniture.price %>円</p>
           <p>
           <%= link_to 'Show', furniture %>
           <%= link_to 'Edit', edit_furniture_path(furniture) %>
