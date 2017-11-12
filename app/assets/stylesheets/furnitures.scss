@@ -2,6 +2,49 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// header
+nav{
+	background-color: #fff;
+	border-bottom: 2px solid #ccc;
+	line-height: 1.5em;
+	margin-bottom: 1em;
+	font-size: 1.3em;
+	position: relative;
+	h1.logo{
+		text-align: center;
+		position: absolute;
+		right: 0;
+		left: 0;
+		font-size: 1em;
+		display: inline;
+		line-height: 1.5em;
+	}
+
+	.navbar-toggler{
+		border: none;
+	}
+	.navbar-brand{
+		text-align: center;
+	}
+	.search_block{
+		margin-top: 0.5em;
+		font-size: 1em;
+		line-height: 0.8em;
+	}
+	// placeholderにfontawesome
+	input.font-awesome#inlineFormInputGroup{
+	    font-family: FontAwesome;
+	    font-style: normal;
+	    font-weight: normal;
+	    font-size: 1em;
+	    text-decoration: inherit;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	}
+}
+
+
+
 .furniture_block{
 	margin-bottom: 1em;
 	border-bottom: 1px solid #333;
@@ -17,7 +60,7 @@
 #furnitura_detail_top{
 	.furniture_top_img{
 		img{
-			max-width: 100%;
+			width: 100%;
 		}
 	}
 	.furniture_about_text{
@@ -27,18 +70,12 @@
 #kodawari{
 	.kodawari_img{
 		img{
-			max-width: 100%;
+			width: 100%;
 		}
 	}
 	.kodawari_text{
 		margin: 1em;
 	}	
-}
-
-#delivery_size{
-	// .deliverysize_table{
-	// 	margin: 1em;
-	// }
 }
 
 // 購入CTA
@@ -53,4 +90,5 @@
 		font-size: 1.5em;	
 	}	
 }	
+
 // kodawari
