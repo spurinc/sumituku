@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171111165843) do
+ActiveRecord::Schema.define(version: 20171112020746) do
 
   create_table "furnitures", force: :cascade do |t|
     t.string "name"
@@ -20,6 +20,9 @@ ActiveRecord::Schema.define(version: 20171111165843) do
     t.datetime "updated_at", null: false
     t.integer "price"
     t.text "furniture_about"
+    t.string "kodawari_img"
+    t.string "kodawari_point"
+    t.text "kodawari_about"
   end
 
 end

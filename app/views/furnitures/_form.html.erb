@@ -23,7 +23,7 @@
 
   <div class="field form-group">
     <%= form.label :furniture_about,"概要" %>
-    <%= form.text_area :furniture_about, id: :furniture_about, :class => "form-control" %>
+    <%= form.text_area :furniture_about, id: :furniture_about,:rows=>"10", :class => "form-control" %>
   </div>
 
     <div class="field form-group">
@@ -32,9 +32,26 @@
   </div>
 
   <div class="field form-group">
-    <%= form.label :furniture_image,"画像" %>
-    <%= form.file_field :furniture_image, id: :furniture_furniture_image , :class => "form-control"%>
+    <%= form.label :furniture_image,"メイン画像" %>
+    <%= form.file_field :furniture_image, id: :furniture_image , :class => "form-control"%>
   </div>
+
+<!-- こだわり -->
+  <div class="field form-group">
+    <%= form.label :kodawari_point,"こだわりタイトル" %>
+    <%= form.text_field :kodawari_point, id: :kodawari_point, :class => "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :kodawari_about,"こだわり概要" %>
+    <%= form.text_area :kodawari_about, id: :kodawari_about,:rows=>"7",:maxlength => "100", :class => "form-control" %>
+  </div>  
+
+  <div class="field form-group">
+    <%= form.label :kodawari_img,"こだわり画像" %>
+    <%= form.file_field :kodawari_img, id: :kodawari_img , :class => "form-control"%>
+  </div>
+
 
   <div class="actions">
     <%= form.submit "作成する",:class=>"btn btn-primary"%>

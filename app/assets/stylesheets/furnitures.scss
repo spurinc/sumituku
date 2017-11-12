@@ -14,15 +14,27 @@
 
 
 // show.html.erb
-.furniture_top_img{
-	img{
-		max-width: 100%;
+#furnitura_detail_top{
+	.furniture_top_img{
+		img{
+			max-width: 100%;
+		}
+	}
+	.furniture_about_text{
+		margin: 1em;
 	}
 }
-.furniture_about_text{
-	margin: 1em;
+#kodawari{
+	.kodawari_img{
+		img{
+			max-width: 100%;
+		}
+	}
+	.kodawari_text{
+		margin: 1em;
+	}	
 }
-
+// 購入CTA
 .purchase_block{
 	background-color: #d1718e;
 	color: #fff;
@@ -32,6 +44,6 @@
 		padding: 0.4em 0;
 		line-height: 1.5em;
 		font-size: 1.5em;	
-	}
-	
-}
+	}	
+}	
+// kodawari

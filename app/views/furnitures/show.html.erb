@@ -3,6 +3,7 @@
   <strong>Category:</strong>
   <%= @furniture.category %>
 </p> 
+<section id="furnitura_detail_top">
 <div class="furniture_top_img">
 	<%= image_tag @furniture.furniture_image %>
 </div>
@@ -17,5 +18,21 @@
 	<p><i class="fa fa-shopping-cart" aria-hidden="true"></i>カートへ進む ></p>
 </div>
 
+</section>
+<!-- こだわり -->
+<section id="kodawari">
+<div class="kodawari_img">
+	<%= image_tag @furniture.kodawari_img %>
+</div>
+
+<div class="kodawari_text">
+	<h3><%= @furniture.kodawari_point %></h3>
+	<p><%= sanitize(simple_format(@furniture.kodawari_about), :tags => %w(p br)) %></p>
+</div>
+
+<div class="purchase_block">
+	<p><i class="fa fa-shopping-cart" aria-hidden="true"></i>カートへ進む ></p>
+</div>
+</section>
 <%= link_to 'Edit', edit_furniture_path(@furniture) %> |
 <%= link_to 'Back', furnitures_path %>
