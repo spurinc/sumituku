@@ -3,7 +3,7 @@
 <% end %>
 
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-	<h1 class="logo">SUMITUKU</h1>
+	<h1 class="logo"><%= link_to 'SUMITUKU', furnitures_path %></h1>
 	<a class="category_title" href="#"><%= @furniture.category %></a>
 	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<i class="fa fa-search" aria-hidden="true"></i>
@@ -11,7 +11,7 @@
   <div class="collapse navbar-collapse search_block" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
     </ul>
-    <%= form_tag furnitures_search_path, :method => 'get' do %>
+    <%= form_tag furnitures_path, :method => 'get' do %>
 	  <div class="input-group">
 	  	<%= text_field_tag :search, params[:search], class: 'form-control font-awesome', placeholder: "\uF002",id: "inlineFormInputGroup" %>
 	  	<%= submit_tag "検索",class: 'input-group-addon search_button' %>

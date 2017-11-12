@@ -27,9 +27,10 @@ nav{
 		text-align: center;
 	}
 	.search_block{
-		margin-top: 0.5em;
+		margin: 0.5em auto 0;
 		font-size: 1em;
 		line-height: 0.8em;
+		width: 80%; 
 	}
 	// placeholderにfontawesome
 	input.font-awesome#inlineFormInputGroup{

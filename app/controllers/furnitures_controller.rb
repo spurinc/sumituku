@@ -4,7 +4,14 @@ class FurnituresController < ApplicationController
   # GET /furnitures
   # GET /furnitures.json
   def index
-    @furnitures = Furniture.all
+      # @furnitures = Furniture.all
+      @furnitures = Furniture.search(params[:search])
+  end
+
+  #検索機能
+  def search
+    #ViewのFormで取得したパラメータをモデルに渡す
+    @furnitures = Furniture.search(params[:search])
   end
 
   # GET /furnitures/1
@@ -61,12 +68,6 @@ class FurnituresController < ApplicationController
     end
   end
 
-
-  #検索機能
-  def search
-    #ViewのFormで取得したパラメータをモデルに渡す
-    @furnitures = Furniture.search(params[:search])
-  end
 
 
   private

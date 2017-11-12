@@ -6,7 +6,7 @@ class Furniture < ApplicationRecord
 # 検索
 	def self.search(search) #self.でクラスメソッドとしている
       if search # Controllerから渡されたパラメータが!= nilの場合は、titleカラムを部分一致検索
-        Furniture.where(['language LIKE ?', "%#{search}%"])
+        Furniture.where(['name LIKE ?', "%#{search}%"])
       else
         Furniture.all #全て表示。
       end
