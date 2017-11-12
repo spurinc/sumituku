@@ -29,10 +29,24 @@
 	<h3><%= @furniture.kodawari_point %></h3>
 	<p><%= sanitize(simple_format(@furniture.kodawari_about), :tags => %w(p br)) %></p>
 </div>
+</section>
+
+<section id="delivery_size">
+	<table class="deliverysize_table table table-responsive">
+		<tr>
+			<th>サイズ</th>
+			<td><%= sanitize(simple_format(@furniture.size), :tags => %w(p br)) %></td>
+		</tr>
+		<tr>
+			<th>配送</th>
+			<td><%= sanitize(simple_format(@furniture.delivery), :tags => %w(p br)) %></td>
+		</tr>
+	</table>
+</section>
 
 <div class="purchase_block">
 	<p><i class="fa fa-shopping-cart" aria-hidden="true"></i>カートへ進む ></p>
 </div>
-</section>
+
 <%= link_to 'Edit', edit_furniture_path(@furniture) %> |
 <%= link_to 'Back', furnitures_path %>

@@ -52,6 +52,16 @@
     <%= form.file_field :kodawari_img, id: :kodawari_img , :class => "form-control"%>
   </div>
 
+<!-- 配送方法とサイズ -->
+  <div class="field form-group">
+    <%= form.label :size,"サイズ" %>
+    <%= form.text_area :size, id: :size,:rows=>"5", :class => "form-control" %>
+  </div>  
+
+    <div class="field form-group">
+    <%= form.label :delivery,"配送方法" %>
+    <%= form.text_area :delivery, id: :delivery,:rows=>"5", :class => "form-control" %>
+  </div>  
 
   <div class="actions">
     <%= form.submit "作成する",:class=>"btn btn-primary"%>

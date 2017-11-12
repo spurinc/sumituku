@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171112020746) do
+ActiveRecord::Schema.define(version: 20171112024115) do
 
   create_table "furnitures", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20171112020746) do
     t.string "kodawari_img"
     t.string "kodawari_point"
     t.text "kodawari_about"
+    t.text "size"
+    t.text "delivery"
   end
 
 end
