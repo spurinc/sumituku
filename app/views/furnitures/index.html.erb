@@ -3,20 +3,21 @@
 <h1>Furnitures</h1>
 
     <% @furnitures.each do |furniture| %>
-      <div>
+      <div class="furniture_block">
         <div class="furniture_img_block">
           <%= image_tag furniture.furniture_image %>
         </div>
         <div>
           <h3><%= furniture.name %></h3>
-          <p><%= furniture.category %></p>
+          <p>カテゴリ：<%= furniture.category %></p>
+          <p>値段<%= furniture.price %>円</p>
           <p><%= sanitize(simple_format(furniture.furniture_about), :tags => %w(p br)) %>
           </p>
-          <p><%= furniture.price %>円</p>
+          
           <p>
-          <%= link_to 'Show', furniture %>
-          <%= link_to 'Edit', edit_furniture_path(furniture) %>
-          <%= link_to 'Destroy', furniture, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to '詳細', furniture %>
+          <%= link_to '編集', edit_furniture_path(furniture) %>
+          <%= link_to '削除', furniture, method: :delete, data: { confirm: 'Are you sure?' } %>
           </p>
           </div>
       </div>

@@ -1,20 +1,21 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @furniture.name %>
-</p>
-
 <p>
   <strong>Category:</strong>
   <%= @furniture.category %>
-</p>
+</p> 
+<div class="furniture_top_img">
+	<%= image_tag @furniture.furniture_image %>
+</div>
+<div class="furniture_about_text">
+	<h3><%= @furniture.name %></h3>
+	<p><%= sanitize(simple_format(@furniture.furniture_about), :tags => %w(p br)) %></p>
+	<p>値段：<%= @furniture.price %>円</p>
 
-<p>
-  <strong>Furniture image:</strong>
-  <%#= image_tag @post.image_url %>
-  <%= image_tag @furniture.furniture_image %>
-</p>
+</div>
+
+<div class="purchase_block">
+	<p><i class="fa fa-shopping-cart" aria-hidden="true"></i>カートへ進む ></p>
+</div>
 
 <%= link_to 'Edit', edit_furniture_path(@furniture) %> |
 <%= link_to 'Back', furnitures_path %>
