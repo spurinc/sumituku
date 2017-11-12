@@ -5,7 +5,7 @@ class FurnituresController < ApplicationController
   # GET /furnitures.json
   def index
       # @furnitures = Furniture.all
-      @furnitures = Furniture.search(params[:search])
+      @furnitures = Furniture.search(params[:search]).order(created_at: :desc)
   end
 
   #検索機能
