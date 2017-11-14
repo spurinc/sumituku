@@ -3,11 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // header
+.navbar-container {
+	border: 1.2px solid #ccc;
+	padding: 12px 5px;
+}
+
+.fa-search {
+	color: #ccc;
+}
+
 nav{
 	background-color: #fff;
-	border-bottom: 2px solid #ccc;
 	line-height: 1.5em;
-	margin-bottom: 1em;
 	font-size: 1.3em;
 	position: relative;
 	h1.logo{
@@ -16,10 +23,14 @@ nav{
 		right: 0;
 		left: 0;
 		font-size: 1em;
+		font-weight: 300;
 		display: inline;
 		line-height: 1.5em;
 		width: 30%;
 		margin: 0 auto;
+		a {
+			color: #ccc;
+		}
 	}
 	.navbar-toggler{
 		border: none;
@@ -31,10 +42,11 @@ nav{
 		margin: 0.5em auto 0;
 		font-size: 1em;
 		line-height: 0.8em;
-		width: 80%; 
+		width: 80%;
 	}
 	.category_title{
-		color: #0275d8;
+		color: #ccc !important;
+		font-weight: 300;
 		width: 20%;
 	}
 	// placeholderにfontawesome
@@ -48,8 +60,6 @@ nav{
 	    -moz-osx-font-smoothing: grayscale;
 	}
 }
-
-
 
 .furniture_block{
 	margin-bottom: 1em;
@@ -65,36 +75,60 @@ nav{
 // show.html.erb
 #furnitura_detail_top{
 	.furniture_top_img{
+		padding: 10px;
 		img{
 			width: 100%;
 		}
 	}
 	.furniture_about_text{
-		margin: 1em;
+		margin: 0 10px;
+		h3 {
+			color: #a9a9a9;
+			margin: 20px 0;
+		}
+		.furniture_description{
+			color: #c0c0c0;
+			line-height: 1.5;
+			margin-bottom: 20px;
+		}
+		.furniture_price{
+			color: #a9a9a9;
+			font-size: 1.2em;
+		}
 	}
 }
 #kodawari{
 	.kodawari_img{
+		padding: 10px;
 		img{
 			width: 100%;
 		}
 	}
 	.kodawari_text{
-		margin: 1em;
-	}	
+		margin: 0 10px;
+		h3 {
+			color: #a9a9a9;
+			margin: 20px 0;
+		}
+		.kodawari_description{
+			color: #c0c0c0;
+			line-height: 1.5;
+			margin-bottom: 20px;
+		}
+	}
 }
 
 // 購入CTA
 .purchase_block{
 	background-color: #d1718e;
 	color: #fff;
-	width: 100%;
-	p{
-		text-align: center;
-		padding: 0.4em 0;
-		line-height: 1.5em;
-		font-size: 1.5em;	
-	}	
-}	
+	padding: 20px 20px;
+	line-height: 1.5em;
+	margin: 30px 10px;
+}
+
+.fa-shopping-cart{
+	margin-right: 10px;
+}
 
 // kodawari
