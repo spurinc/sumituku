@@ -18,6 +18,9 @@
       <%= f.file_field :prof_img, class: 'form-control-file login_mail_form' %>
     </div>
 
+    <label><%= f.radio_button :creator_buyer, "creator" %>作り手</label>
+    <label><%= f.radio_button :creator_buyer, "buyer" %>買い手</label>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>

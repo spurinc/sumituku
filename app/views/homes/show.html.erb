@@ -5,6 +5,9 @@
 	<% if current_user.prof_img != nil %>
 		<%= image_tag current_user.prof_img %>
 	<% end %>
+	<% if current_user.creator_buyer != nil %>
+		<%= current_user.creator_buyer %>
+	<% end %>
 </div>
 
 
