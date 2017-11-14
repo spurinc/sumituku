@@ -21,6 +21,8 @@
     <label><%= f.radio_button :creator_buyer, "creator" %>作り手</label>
     <label><%= f.radio_button :creator_buyer, "buyer" %>買い手</label>
 
+
+<% if false %>
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
@@ -43,6 +45,8 @@
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
   </div>
+
+<% end %>
 
   <div class="actions">
     <%= f.submit "Update" %>
