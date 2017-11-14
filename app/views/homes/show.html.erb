@@ -1,18 +1,22 @@
 <section id="mypage">
 
-<div class="mypage_link">
-	<a><%= current_user.username %></a>
-	<% if current_user.prof_img != nil %>
-		<%= image_tag current_user.prof_img %>
-	<% end %>
-	<% if current_user.creator_buyer != nil %>
-		<%= current_user.creator_buyer %>
-	<% end %>
+<div class="mypage_title mypage_link">
+	<h2>マイページ</h2>
 </div>
 
 
-<div class="mypage_title mypage_link">
-	<h2>マイページ</h2>
+<div class="mypage_link prof_info_block">
+	<div class="prof_block">
+	<% if current_user.prof_img != nil %>
+		<%= image_tag current_user.prof_img %>
+	<% end %>
+	</div>
+	<div class="prof_block prof_info">
+	<p><%= current_user.username %></p>
+	<% if current_user.creator_buyer != nil %>
+		<p><%= current_user.creator_buyer %></p>
+	<% end %>
+	</div>
 </div>
 
 <div class="mypage_detail_block mypage_link">
