@@ -1,2 +1,39 @@
-<h1>こんにちは、<%= current_user.username %>さん</h1>
-<p>ユーザー用ページです。</p>
+<section id="mypage">
+
+<div class="mypage_link">
+	<a><%= current_user.username %></a>
+	<% if current_user.prof_img != nil %>
+		<%= image_tag current_user.prof_img %>
+	<% end %>
+</div>
+
+
+<div class="mypage_title mypage_link">
+	<h2>マイページ</h2>
+</div>
+
+<div class="mypage_detail_block mypage_link">
+	<div class="detail_link_block">
+		<%= link_to "プロフィール編集", edit_user_registration_path %>
+	</div>
+	<div class="detail_link_block">
+		<a href="">配送先住所</a>
+	</div>
+	<div class="detail_link_block">
+		<a href="">支払い方法</a>
+	</div>
+	<div class="detail_link_block">
+		<a href="">注文履歴</a>
+	</div>
+	<div class="detail_link_block">
+		<a href="">お気に入り</a>
+	</div>
+	<div class="detail_link_block">
+		<a href="">出品一覧</a>
+	</div>
+</div>
+
+<div class="logout_block mypage_link">
+	<a>ログアウト</a>
+</div>
+</section>

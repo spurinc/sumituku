@@ -4,10 +4,7 @@ class ApplicationController < ActionController::Base
 
 
     def after_sign_in_path_for(resource)
-    	# pages_show_path
-      # edit_user_registration_path
       homes_show_path
-      # redirect_to "/pages/#{current_user.id}"
     end
 
 
@@ -33,7 +30,7 @@ class ApplicationController < ActionController::Base
 
     protected
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
-      devise_parameter_sanitizer.permit(:account_update, keys: [:username])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:username,:prof_img,:creator_buyer])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:username,:prof_img,:creator_buyer])
     end
 end

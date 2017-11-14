@@ -1,0 +1,24 @@
+#mypage{
+	background-color: #ccc;	
+	.mypage_link{
+		background-color: #fff;
+		color: #333;
+		margin: 1em auto 2em;
+	}
+	.mypage_title{
+		h2{
+			font-size: 1.1em;
+			padding: 1em;
+		}
+	}
+	.mypage_detail_block{
+		.detail_link_block{
+			border-bottom: 1px solid #ccc;
+			padding: 0.9em;
+		}
+	}
+	.logout_block{
+		padding: 0.9em;
+	}
+
+}
