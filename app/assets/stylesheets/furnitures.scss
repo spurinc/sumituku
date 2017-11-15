@@ -71,9 +71,12 @@ nav{
 	}
 }
 
+.furniture_container{
+	border-bottom: 1px solid #ccc;
+}
 
 // show.html.erb
-#furnitura_detail_top{
+#furniture_detail_top{
 	.furniture_top_img{
 		padding: 10px;
 		img{
@@ -92,6 +95,7 @@ nav{
 			margin-bottom: 20px;
 		}
 		.furniture_price{
+			padding-bottom: 10px;
 			color: #a9a9a9;
 			font-size: 1.2em;
 		}
