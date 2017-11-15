@@ -42,7 +42,15 @@ gem 'jbuilder', '~> 2.5'
 gem 'carrierwave'
 gem 'rmagick', require: 'RMagick'
 
+
 gem 'payjp'
+
+# ログイン
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+
 
 
 group :development, :test do

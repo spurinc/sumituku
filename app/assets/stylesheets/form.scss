@@ -1,0 +1,60 @@
+#signup{
+	h2{
+		font-size: 1.2em;
+		text-align: center;
+	}
+	.actions{
+		text-align: center;
+	}
+}
+.twBtn{
+	background-color: #4AB3F4;
+	margin: 10px auto;
+	padding: 0.5em 1em;
+	text-align: center;
+	color: #fff;
+	i.fa-facebook,i.fa-twitter,.twBtn a.login_txt{
+		font-size: 1.1em;
+		color: #fff;
+	}
+	a:visited{
+		color: #fff;
+	}
+}
+
+.MailLoginBtn{
+	border: #767676 solid 2px;
+	margin: 5px auto;
+	padding: 0.2em 1em;
+	text-align: center;
+	a.maillogin_txt{
+		font-size: 1.1em;
+		text-align: center;
+	}
+
+}
+
+.lines-on-sides {
+    display: table;
+    text-align: center;
+    white-space: nowrap;
+ 	// width: 80%;
+ 	margin: 1em auto;
+ 	color: #aaa;
+    &:after,
+    &:before {
+        content: '';
+        display: table-cell;
+        width: 50%;
+        background: linear-gradient(transparent 50%, currentColor 50%, currentColor calc(50% + 2px), transparent calc(50% + 2px));
+        background-clip: padding;
+    }
+ 
+    &:after {
+        border-left: 1em solid transparent;
+    }
+ 
+    &:before {
+        border-right: 1em solid transparent;
+    }
+}
