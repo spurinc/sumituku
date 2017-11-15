@@ -38,6 +38,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'payjp'
+
 # 画像保存+表示
 gem 'carrierwave'
 gem 'rmagick', require: 'RMagick'

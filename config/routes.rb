@@ -4,5 +4,9 @@ Rails.application.routes.draw do
 
   root to: 'furnitures#index'
 
+root 'products#index'
+get 'products' => 'products#index'
+post 'products/pay' => 'products#pay'
+
   get 'furnitures/search' => "furnitures#search"
 end
