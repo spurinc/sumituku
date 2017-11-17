@@ -41,6 +41,7 @@
 </div>
 
 <div class="logout_block mypage_link">
-	<a>ログアウト</a>
+	<%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "category_title" %>
+	<!-- <a>ログアウト</a> -->
 </div>
 </section>

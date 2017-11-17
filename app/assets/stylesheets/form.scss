@@ -1,7 +1,8 @@
-#signup{
+.devise_form{
 	h2{
-		font-size: 1.2em;
 		text-align: center;
+		font-size: 1.3em;
+		margin: 0.3em;
 	}
 	.actions{
 		text-align: center;
@@ -58,3 +59,4 @@
         border-right: 1em solid transparent;
     }
 }
+
