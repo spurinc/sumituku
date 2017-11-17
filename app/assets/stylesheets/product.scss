@@ -1,5 +1,5 @@
-#recently_popular{
-	overflow: scroll;
+#recently_popular,#category_popular{
+	margin-bottom: 2.5em;
 	h2{
 		font-size: 1.3em;
 		color: #333;
@@ -10,6 +10,7 @@
 		padding: 0;
 		white-space:nowrap;
 		// width: 150%;
+		overflow: scroll;
 		li.product_block{
 			height: 300px;
 			width: 180px;
@@ -39,4 +40,21 @@
 			}
 		}
 	}
+}
+
+#sumituku_block{
+	margin-top: 3em;
+	.crator_img_block{
+		width: 85%;
+		margin: 0 auto;
+		img{
+			text-align: center;
+			width: 100%;
+		}		
+	}
+	h2{
+		text-align: center;
+		font-weight: 1.3em;
+	}
+
 }

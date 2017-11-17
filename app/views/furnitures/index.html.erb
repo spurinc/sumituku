@@ -17,6 +17,28 @@
             <% end %>
           </ul>
         </section>
+
+        <section id="category_popular">
+          <h2>テーブルの人気商品</h2>
+          <ul class="recently_popular_blocks">
+            <% @furnitures.each do |furniture| %>
+              <% if furniture.category == "table" %>
+                <li class="product_block">
+                  <div class="furniture_img">
+                    <%= image_tag furniture.furniture_image %>
+                  </div>
+                  <h4><%= link_to furniture.name, furniture %></h4>
+                    <p><%= furniture.price %>円</p>
+                    <div class="product_kodawari_block">
+                    <p><%= furniture.kodawari_point %></p>
+                    </div>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </section>
+
+
     
         <section id="furniture_detail_top">
           <% @furnitures.each do |furniture| %>
@@ -42,6 +64,17 @@
           </p> -->
           <% end %>
         </section>
+
+
+        <section id="sumituku_block">
+          <!-- <img src=""> -->
+          <div class="crator_img_block">
+            <%= image_tag 'creator.jpg' %>
+          </div>
+          <h2>SUMITUKUとは</h2>
+
+        </section>
+
       </div>
     
 
