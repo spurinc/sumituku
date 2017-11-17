@@ -25,7 +25,11 @@
         <% if @furniture == nil %>
 
           <% if user_signed_in? %>
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "category_title" %>
+            <%#= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "category_title" %>
+            <%#= link_to 'マイページ', homes_show_path, class: "category_title" %>
+            <%= link_to homes_show_path,  class: "category_title" do %>
+              <i class="fa fa-user-circle" aria-hidden="true"></i>
+            <% end %>
           <% else %>
             <%= link_to '登録', new_user_registration_path, class: 'category_title' %>
           <% end %>
