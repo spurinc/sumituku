@@ -1,5 +1,19 @@
-    <% @furnitures.each do |furniture| %>
+    
       <div class="furniture_container">
+        <section id="recently_popular">
+          <ul class="recently_popular_blocks">
+            <% @furnitures.each do |furniture| %>
+            <li class="product_block">
+              <div class="furniture_img">
+                <%= image_tag furniture.furniture_image %>
+              </div>
+              <h4><%= link_to furniture.name, furniture %></h4>
+                <p><%= furniture.price %>円</p>
+            </li>
+            <% end %>
+          </ul>
+        </section>
+    <% @furnitures.each do |furniture| %>
         <section id="furniture_detail_top">
           <div class="furniture_top_img">
         		<%= image_tag furniture.furniture_image %>
@@ -17,9 +31,9 @@
         		</div>
         	</div>
           <!-- <p>
-          <%= link_to '詳細', furniture %>
-          <%= link_to '編集', edit_furniture_path(furniture) %>
-          <%= link_to '削除', furniture, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%#= link_to '詳細', furniture %>
+          <%#= link_to '編集', edit_furniture_path(furniture) %>
+          <%#= link_to '削除', furniture, method: :delete, data: { confirm: 'Are you sure?' } %>
           </p> -->
         </section>
       </div>

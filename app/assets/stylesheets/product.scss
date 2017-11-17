@@ -1,0 +1,29 @@
+#recently_popular{
+	overflow: scroll;
+	.recently_popular_blocks{
+		list-style: none;
+		padding: 0;
+		white-space:nowrap;
+		// width: 150%;
+		li.product_block{
+			height: 300px;
+			width: 180px;
+			background-color: #fff;
+			border:1px solid #ccc;
+			margin: 0 0.3em;
+			display: inline-block;
+			.furniture_img{
+				margin: 0.5em;
+				height: 150px;
+				img{
+					max-width: 100%;
+					border-radius: 5px;
+				}
+			}
+			h4{
+				font-size: 1.1em;
+				font-weight: bold;
+			}
+		}
+	}
+}
