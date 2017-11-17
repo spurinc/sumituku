@@ -1,5 +1,10 @@
 #recently_popular{
 	overflow: scroll;
+	h2{
+		font-size: 1.3em;
+		color: #333;
+		margin: 0.5em;
+	}
 	.recently_popular_blocks{
 		list-style: none;
 		padding: 0;
@@ -16,13 +21,21 @@
 				margin: 0.5em;
 				height: 150px;
 				img{
-					max-width: 100%;
+					width: 165px;
+					height: 150px;
 					border-radius: 5px;
 				}
 			}
 			h4{
-				font-size: 1.1em;
+				font-size: 1.2em;
 				font-weight: bold;
+				margin: 0.7em auto;
+			}
+			.product_kodawari_block{
+				p{
+  					word-break: break-all;
+  					white-space: normal;
+				}
 			}
 		}
 	}
