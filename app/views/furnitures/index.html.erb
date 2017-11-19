@@ -10,6 +10,8 @@
               </div>
               <h4><%= link_to furniture.name, furniture %></h4>
                 <p><%= furniture.price %>円</p>
+                <% user = User.find_by(id: furniture.user_id) %>
+                <p><%= user.username %></p>
                 <div class="product_kodawari_block">
                 <p><%= furniture.kodawari_point %></p>
                 </div>

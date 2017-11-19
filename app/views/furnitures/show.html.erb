@@ -48,6 +48,10 @@
 			<th>配送</th>
 			<td><%= sanitize(simple_format(@furniture.delivery), :tags => %w(p br)) %></td>
 		</tr>
+		<tr>
+			<th>作り手</th>
+			<td><%= @user.username %></td>
+		</tr>
 	</table>
 </section>
 
