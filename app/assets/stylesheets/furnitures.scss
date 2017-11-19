@@ -75,6 +75,22 @@ nav{
 	border-bottom: 1px solid #ccc;
 }
 
+footer{
+	background-color: #fafafa;
+	margin-top: 1em;
+	.company_info{
+		padding:0.5em;
+		h3,h4,p{
+			margin: 0.4em 0;
+		}
+		h3,h4{
+			font-size: 1.2em;
+		}
+	}
+}
+
+
+
 // show.html.erb
 #furniture_detail_top{
 	.furniture_top_img{
