@@ -2,6 +2,7 @@ class Furniture < ApplicationRecord
 	 mount_uploader :furniture_image, ImageUploader
 	 mount_uploader :kodawari_img, ImageUploader
 
+	 validates :user_id,{presence: true}
 
 # 検索
 	def self.search(search) #self.でクラスメソッドとしている

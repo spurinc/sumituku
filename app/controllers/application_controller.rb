@@ -13,21 +13,6 @@ class ApplicationController < ActionController::Base
         redirect_to new_user_session_url unless user_signed_in?
     end
 
-
-    # protected
-    # def update_resource(resource, params)
-    #   resource.update_without_password(params)
-    # end
-    # def after_sign_in_path_for(resource)
-    #     pages_show_path
-    # end
-
-    # private
-    #     def sign_in_required
-    #         redirect_to new_user_session_url unless user_signed_in?
-    #     end
-
-
     protected
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: [:username,:prof_img,:creator_buyer])

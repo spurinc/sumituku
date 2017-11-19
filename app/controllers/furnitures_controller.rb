@@ -4,7 +4,6 @@ class FurnituresController < ApplicationController
   # GET /furnitures
   # GET /furnitures.json
   def index
-      # @furnitures = Furniture.all
       @furnitures = Furniture.search(params[:search]).order(created_at: :desc)
   end
 
@@ -17,6 +16,7 @@ class FurnituresController < ApplicationController
   # GET /furnitures/1
   # GET /furnitures/1.json
   def show
+    @user = User.find_by(id: @furniture.user_id)
   end
 
   # GET /furnitures/new
@@ -32,7 +32,7 @@ class FurnituresController < ApplicationController
   # POST /furnitures.json
   def create
     @furniture = Furniture.new(furniture_params)
-
+    # user_id: current_user.id
     respond_to do |format|
       if @furniture.save
         format.html { redirect_to @furniture, notice: 'Furniture was successfully created.' }
@@ -78,6 +78,6 @@ class FurnituresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def furniture_params
-      params.require(:furniture).permit(:name, :category, :furniture_image,:furniture_about,:price,:kodawari_img,:kodawari_point,:kodawari_about,:size,:delivery)
+      params.require(:furniture).permit(:name, :category, :furniture_image,:furniture_about,:price,:kodawari_img,:kodawari_point,:kodawari_about,:size,:delivery,:user_id)
     end
 end

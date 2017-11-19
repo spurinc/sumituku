@@ -48,6 +48,10 @@
 			<th>配送</th>
 			<td><%= sanitize(simple_format(@furniture.delivery), :tags => %w(p br)) %></td>
 		</tr>
+		<tr>
+			<th>作り手</th>
+			<td><%= @user.username %></td>
+		</tr>
 	</table>
 </section>
 
@@ -56,5 +60,9 @@
 	<span>カートに進む</span>
 </div>
 
+<% if user_signed_in? %>
+<% if @user.id == current_user.id %>
 <%= link_to 'Edit', edit_furniture_path(@furniture) %> |
 <%= link_to 'Back', furnitures_path %>
+<% end %>
+<% end %>
