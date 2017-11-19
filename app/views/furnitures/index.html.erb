@@ -8,13 +8,18 @@
               <div class="furniture_img">
                 <%= image_tag furniture.furniture_image %>
               </div>
-              <h4><%= link_to furniture.name, furniture %></h4>
-                <p><%= furniture.price %>円</p>
+              <div class="product_text">
                 <% user = User.find_by(id: furniture.user_id) %>
-                <p><%= user.username %></p>
+                <p>
+                  <span><%= image_tag user.prof_img %></span>
+                  <%= user.username %>
+                </p>
                 <div class="product_kodawari_block">
-                <p><%= furniture.kodawari_point %></p>
+                  <h4><%= link_to furniture.name, furniture %></h4>            
+                  <p><%= furniture.kodawari_point %></p>
                 </div>
+                <p><%= furniture.price %>円</p>
+              </div>
             </li>
             <% end %>
           </ul>
@@ -29,11 +34,18 @@
                   <div class="furniture_img">
                     <%= image_tag furniture.furniture_image %>
                   </div>
-                  <h4><%= link_to furniture.name, furniture %></h4>
-                    <p><%= furniture.price %>円</p>
+                  <div class="product_text">
+                    <% user = User.find_by(id: furniture.user_id) %>
+                    <p>
+                      <span><%= image_tag user.prof_img %></span>
+                      <%= user.username %>
+                    </p>
                     <div class="product_kodawari_block">
-                    <p><%= furniture.kodawari_point %></p>
+                      <h4><%= link_to furniture.name, furniture %></h4>            
+                      <p><%= furniture.kodawari_point %></p>
                     </div>
+                    <p><%= furniture.price %>円</p>
+                  </div>
                 </li>
               <% end %>
             <% end %>
@@ -82,4 +94,4 @@
 
 <br>
 
-<%= link_to 'New Furniture', new_furniture_path %>
+<%#= link_to 'New Furniture', new_furniture_path %>
