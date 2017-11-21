@@ -41,8 +41,7 @@ gem 'jbuilder', '~> 2.5'
 # 画像保存+表示
 gem 'carrierwave'
 gem 'rmagick', require: 'RMagick'
-
-
+gem 'cloudinary'
 
 gem 'payjp'
 
