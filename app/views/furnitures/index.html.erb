@@ -11,7 +11,11 @@
               <div class="product_text">
                 <% user = User.find_by(id: furniture.user_id) %>
                 <p>
-                  <span><%= image_tag user.prof_img %></span>
+                  <% if user.prof_img.file.nil? %>
+                    <span><%= image_tag 'Gravatar-icon.png' %></span>
+                  <% else %>
+                    <span><%= image_tag user.prof_img %></span>
+                  <% end %>  
                   <%= user.username %>
                 </p>
                 <div class="product_kodawari_block">
@@ -37,7 +41,11 @@
                   <div class="product_text">
                     <% user = User.find_by(id: furniture.user_id) %>
                     <p>
-                      <span><%= image_tag user.prof_img %></span>
+                      <% if user.prof_img.file.nil? %>
+                        <span><%= image_tag ('Gravatar-icon.png') %></span>
+                      <% else %>
+                        <span><%= image_tag user.prof_img %></span>
+                      <% end %>  
                       <%= user.username %>
                     </p>
                     <div class="product_kodawari_block">

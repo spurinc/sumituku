@@ -43,6 +43,7 @@ gem 'carrierwave'
 gem 'rmagick', require: 'RMagick'
 
 
+
 gem 'payjp'
 
 # ログイン

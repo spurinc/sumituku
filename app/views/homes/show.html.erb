@@ -7,7 +7,9 @@
 
 <div class="mypage_link prof_info_block">
 	<div class="prof_block">
-	<% if current_user.prof_img != nil %>
+	<% if current_user.prof_img.file.nil? %>
+		<%= image_tag ('Gravatar-icon.png') %>
+	<% else %>
 		<%= image_tag current_user.prof_img %>
 	<% end %>
 	</div>
