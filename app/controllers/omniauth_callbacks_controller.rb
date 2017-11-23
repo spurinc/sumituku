@@ -1,5 +1,6 @@
 class OmniauthCallbacksController < ApplicationController
 
+	# ツイッターログイン
 	def twitter
         @user = User.from_omniauth(request.env["omniauth.auth"].except("extra"))
 

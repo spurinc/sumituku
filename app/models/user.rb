@@ -9,14 +9,18 @@ class User < ApplicationRecord
          :lockable, :timeoutable, :omniauthable,
           omniauth_providers: [:twitter]
   
+  # ユーザーのプロフィール画像を保存できるように
   mount_uploader :prof_img, ImageUploader
 
+# 以下はgem deviseの仕様です
+
+  # gem omniauthを利用
   def self.from_omniauth(auth)
     find_or_create_by(provider: auth["provider"], uid: auth["uid"]) do |user|
-      user.provider = auth["provider"]
-      user.uid = auth["uid"]
-      user.username = auth["info"]["nickname"]
-      user.prof_img = user.uid+"jpg"
+      user.provider = auth["provider"]  #twitterからのログイン情報と取得
+      user.uid = auth["uid"] #idを保存
+      user.username = auth["info"]["nickname"] #twitterからユーザー名を取得
+      user.prof_img = user.uid+"jpg" #twitterから画像を保存
     end
   end
 
