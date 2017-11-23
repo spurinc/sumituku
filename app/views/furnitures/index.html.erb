@@ -1,5 +1,7 @@
-    
       <div class="furniture_container">
+      
+      <!-- 最近の人気商品 -->
+      <!-- まだ新着順のみ -->
         <section id="recently_popular">
           <h2>最近の人気商品</h2>
           <ul class="recently_popular_blocks">
@@ -29,6 +31,7 @@
           </ul>
         </section>
 
+        <!-- モック通りにテーブルカテゴリを表示 -->
         <section id="category_popular">
           <h2>テーブルの人気商品</h2>
           <ul class="recently_popular_blocks">
@@ -62,44 +65,36 @@
 
 
     
-        <section id="furniture_detail_top">
-          <% @furnitures.each do |furniture| %>
+<!--         <section id="furniture_detail_top">
+          <%# @furnitures.each do |furniture| %>
           <div class="furniture_top_img">
-        		<%= image_tag furniture.furniture_image %>
+        		<%#= image_tag furniture.furniture_image %>
         	</div>
 
         	<div class="furniture_about_text">
-        		<h3><%= link_to furniture.name, furniture %></h3>
+        		<h3><%#= link_to furniture.name, furniture %></h3>
 
         		<div class="furniture_description">
-        			<%= furniture.furniture_about %>
+        			<%#= furniture.furniture_about %>
         		</div>
 
         		<div class="furniture_price">
-        			<%= furniture.price %>円
+        			<%#= furniture.price %>円
         		</div>
         	</div>
-          <!-- <p>
-          <%#= link_to '詳細', furniture %>
-          <%#= link_to '編集', edit_furniture_path(furniture) %>
-          <%#= link_to '削除', furniture, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </p> -->
-          <% end %>
-        </section>
+          </p>
+          <%# end %>
+        </section> -->
 
 
+        <!-- SUMITUKUについて -->
         <section id="sumituku_block">
-          <!-- <img src=""> -->
           <div class="crator_img_block">
             <%= image_tag 'creator.jpg' %>
           </div>
           <h2>SUMITUKUとは</h2>
-
         </section>
 
       </div>
     
-
-<br>
-
 <%#= link_to 'New Furniture', new_furniture_path %>

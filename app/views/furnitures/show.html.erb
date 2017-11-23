@@ -1,35 +1,46 @@
+<!-- ログインメッセージ表示 -->
 <% if notice != nil %>
 	<p id="notice"><%= notice %></p>
 <% end %>
 
+<!-- モックにおける上部分おn商品説明 -->
 <section id="furniture_detail_top">
+	<!-- トップ画像 -->
 	<div class="furniture_top_img">
 		<%= image_tag @furniture.furniture_image %>
 	</div>
 
+	<!-- トップのテキスト（説明文） -->
 	<div class="furniture_about_text">
+		<!-- 家具名 -->
 		<h3><%= @furniture.name %></h3>
 
+		<!-- 家具の概要 -->
 		<div class="furniture_description">
 			<%= @furniture.furniture_about %>
 		</div>
 
+		<!-- 家具の値段 -->
 		<div class="furniture_price">
 			<%= @furniture.price %>円
 		</div>
 	</div>
 
+	<!-- 購入CTA -->
 	<div class="purchase_block">
 		<i class="fa fa-shopping-cart" aria-hidden="true" ></i>
 		<span>カートに進む</span>
 	</div>
 </section>
+
 <!-- こだわり -->
 <section id="kodawari">
+	<!-- こだわり（商品説明以外）の画像 -->
 	<div class="kodawari_img">
 		<%= image_tag @furniture.kodawari_img %>
 	</div>
 
+	<!-- こだわりを説明する説明文 -->
 	<div class="kodawari_text">
 		<h3><%= @furniture.kodawari_point %></h3>
 		<div class="kodawari_description">
