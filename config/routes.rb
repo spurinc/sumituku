@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   # ユーザーのマイページ
   get 'homes/index'
   get 'homes/show'
+  get 'homes/myproduct'
 
   # 家具のパスを設定
   resources :furnitures
