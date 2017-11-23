@@ -1,5 +1,6 @@
 class HomesController < ApplicationController
 before_action :sign_in_required, only: [:show,:user]
+  # ユーザー周りのコントローラー
   def index
   end
 

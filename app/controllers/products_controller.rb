@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+# 決済周りのコントローラー
   def index
   end
 

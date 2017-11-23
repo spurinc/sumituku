@@ -1,6 +1,6 @@
 class FurnituresController < ApplicationController
   before_action :set_furniture, only: [:show, :edit, :update, :destroy]
-
+# 家具周りのコントローラー
   # GET /furnitures
   # GET /furnitures.json
   
