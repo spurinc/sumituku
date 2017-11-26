@@ -1,5 +1,5 @@
 <div class="container devise_form">
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>編集 <%#= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -23,6 +23,19 @@
       <label><%= f.radio_button :creator_buyer, "creator" %>作り手</label>
       <label><%= f.radio_button :creator_buyer, "buyer" %>買い手</label>
     </div>
+
+    <!-- ▼郵便番号入力フィールド(7桁) -->
+  <div class="field">
+    <input type="text" name="zip01" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','pref01','addr01');" class="form-control">
+  </div>
+  <div class="field">
+  <!-- ▼住所入力フィールド(都道府県) -->
+    <input type="text" name="pref01" class="form-control">
+  </div>
+  <div class="field">
+  <!-- ▼住所入力フィールド(都道府県以降の住所) -->
+    <input type="text" name="addr01" class="form-control">
+  </div>
 
 
 <% if false %>
