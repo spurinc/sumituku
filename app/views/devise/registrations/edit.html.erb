@@ -24,18 +24,31 @@
       <label><%= f.radio_button :creator_buyer, "buyer" %>買い手</label>
     </div>
 
+    
+
+    
+    <input type="text" name="post" size="10" maxlength="8" placeholder="郵便番号">
+    <input type="button" id="button" value="自動入力" />
+    
+    <input type="text" name="pref" size="20">
+    <input type="text" name="city" size="60">
+    <input type="text" name="addr" size="60">
+    
+
     <!-- ▼郵便番号入力フィールド(7桁) -->
-  <div class="field">
-    <input type="text" name="zip01" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','pref01','addr01');" class="form-control">
-  </div>
-  <div class="field">
+  <!-- <div class="field"> -->
+    <!-- <label><%#= f.label :postnum,'郵便番号' %></label> -->
+    <!-- <label><%#= f.text_field :postnum, :placeholder => '郵便番号', class: 'form-control login_mail_form font-awesome',size: '10',maxlength: '8', onKeyUp: "AjaxZip3.zip2addr(this,'','pref01','addr01')" %></label> -->
+    <!-- <input type="text" name="zip01" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','pref01','addr01');" class="form-control"> -->
+  <!-- </div> -->
+  <!-- <div class="field"> -->
   <!-- ▼住所入力フィールド(都道府県) -->
-    <input type="text" name="pref01" class="form-control">
-  </div>
-  <div class="field">
+    <!-- <input type="text" name="pref01" class="form-control"> -->
+  <!-- </div> -->
+  <!-- <div class="field"> -->
   <!-- ▼住所入力フィールド(都道府県以降の住所) -->
-    <input type="text" name="addr01" class="form-control">
-  </div>
+    <!-- <input type="text" name="addr01" class="form-control"> -->
+  <!-- </div> -->
 
 
 <% if false %>
