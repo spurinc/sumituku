@@ -25,14 +25,13 @@
     </div>
 
     
-    <!-- <div class="row"> -->
     <div class="field">
       <%= f.label :postnum, "郵便番号" %><br />
       <%= f.text_field :postnum, :placeholder => '郵便番号', class: 'form-control login_mail_form font-awesome',size: 10,maxlength: 8 %>
     </div>
         
     <input type="button" id="autoinput" value="自動入力" class="btn btn-primary col-xs-12" />
-    <!-- </div> -->
+
     <div class="field">
       <%= f.label :pref, "都道府県" %><br />
       <%= f.text_field :pref, :placeholder => '都道府県', class: 'form-control login_mail_form font-awesome',size: 20 %>
@@ -53,22 +52,6 @@
       <%= f.text_field :building, :placeholder => '◯◯マンション101', class: 'form-control login_mail_form font-awesome',size: 60 %>
     </div>
     
-
-    <!-- ▼郵便番号入力フィールド(7桁) -->
-  <!-- <div class="field"> -->
-    <!-- <label><%#= f.label :postnum,'郵便番号' %></label> -->
-    <!-- <label><%#= f.text_field :postnum, :placeholder => '郵便番号', class: 'form-control login_mail_form font-awesome',size: '10',maxlength: '8', onKeyUp: "AjaxZip3.zip2addr(this,'','pref01','addr01')" %></label> -->
-    <!-- <input type="text" name="zip01" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','pref01','addr01');" class="form-control"> -->
-  <!-- </div> -->
-  <!-- <div class="field"> -->
-  <!-- ▼住所入力フィールド(都道府県) -->
-    <!-- <input type="text" name="pref01" class="form-control"> -->
-  <!-- </div> -->
-  <!-- <div class="field"> -->
-  <!-- ▼住所入力フィールド(都道府県以降の住所) -->
-    <!-- <input type="text" name="addr01" class="form-control"> -->
-  <!-- </div> -->
-
 
 <% if false %>
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
