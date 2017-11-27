@@ -47,9 +47,11 @@
       <%= f.label :addr, "番地以下" %><br />
       <%= f.text_field :addr, :placeholder => '1-1-1', class: 'form-control login_mail_form font-awesome',size: 60 %>
     </div>
-<!--     <input type="text" name="pref" size="20">
-    <input type="text" name="city" size="60">
-    <input type="text" name="addr" size="60"> -->
+
+    <div class="field">
+      <%= f.label :building, "部屋番号" %><br />
+      <%= f.text_field :building, :placeholder => '◯◯マンション101', class: 'form-control login_mail_form font-awesome',size: 60 %>
+    </div>
     
 
     <!-- ▼郵便番号入力フィールド(7桁) -->
