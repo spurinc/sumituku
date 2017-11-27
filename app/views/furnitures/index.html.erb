@@ -24,6 +24,11 @@
                   <h4><%= link_to furniture.name, furniture %></h4>            
                   <p><%= furniture.kodawari_point %></p>
                 </div>
+                <% if Favorite.find_by(user_id: current_user.id, furniture_id: furniture.id) %>
+                  <p>いいね！済み</p>
+                <% else %>
+                  <p>いいね！していません</p>
+                <% end %>
                 <p><%= furniture.price %>円</p>
               </div>
             </li>
