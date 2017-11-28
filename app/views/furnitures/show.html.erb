@@ -14,7 +14,12 @@
 	<div class="furniture_about_text">
 		<!-- 家具名 -->
 		<h3><%= @furniture.name %></h3>
-
+		<% if Favorite.find_by(user_id: current_user.id, furniture_id: @furniture.id) %>
+        	<%= link_to("いいね！済み",'/favorites/#{@furniture.id}/destroy',{method: "post"}) %>
+        <% else %>
+        <%= link_to("いいね！",'/favorites/#{@furniture.id}/create',{method: 'post'}) %>
+        	<!-- <p>いいね！していません</p> -->
+        <% end %>
 		<!-- 家具の概要 -->
 		<div class="furniture_description">
 			<%= @furniture.furniture_about %>
