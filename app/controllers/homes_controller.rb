@@ -16,4 +16,10 @@ before_action :sign_in_required, only: [:show,:user]
   	@user = current_user
   	@furnitures = Furniture.where(user_id: @user.id)
   end
+
+  def favorites
+    @user = current_user
+    @favorites = Favorite.where(user_id: @user.id)
+  end
+
 end
