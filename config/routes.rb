@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'homes/index'
   get 'homes/show'
   get 'homes/myproduct'
+  get 'homes/favorites' => 'homes#favorites'
 
   # 家具のパスを設定
   resources :furnitures
@@ -26,5 +27,9 @@ Rails.application.routes.draw do
 
   # 家具の検索を追加
   get 'furnitures/search' => "furnitures#search"
+
+  # お気に入り
+  post "/favorites/:furniture_id/create" => "favorites#create"
+  post "/favorites/:furniture_id/destroy" => "favorites#destroy"
 
 end

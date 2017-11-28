@@ -39,7 +39,7 @@
 		<a href="">注文履歴</a>
 	</div>
 	<div class="detail_link_block">
-		<a href="">お気に入り</a>
+		<%= link_to 'お気に入り', homes_favorites_path %>
 	</div>
 	<% if current_user.creator_buyer == "creator" %>
 	<div class="detail_link_block">
