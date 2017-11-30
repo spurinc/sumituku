@@ -23,3 +23,4 @@ before_action :sign_in_required, only: [:show,:user]
   end
 
 end
+

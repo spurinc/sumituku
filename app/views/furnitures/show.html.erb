@@ -9,8 +9,9 @@
 	<div class="furniture_about_text">
 		<!-- 家具名 -->
 		<h3><%= @furniture.name %></h3>
+
 		<% if user_signed_in? %>
-			<% if Favorite.find_by(user_id: current_user.id, furniture_id: @furniture.id) %>
+			  <% if Favorite.find_by(user_id: current_user.id, furniture_id: @furniture.id) %>
 	        	<%= link_to("/favorites/#{@furniture.id}/destroy",{method: "post"}) do %>
 	        		<p class="good_icon">
 	        			<i class="fa fa-heart" aria-hidden="true"></i>お気に入り！済み
@@ -28,8 +29,8 @@
   				<p class="good_icon">
   					<i class="fa fa-heart-o" aria-hidden="true"></i>お気に入り！
   				</p>
-			<% end %>
-        <% end %>
+			  <% end %>
+    <% end %>
 
 		<!-- 家具の概要 -->
 		<div class="furniture_description">
