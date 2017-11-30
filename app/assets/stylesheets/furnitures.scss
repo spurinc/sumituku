@@ -56,7 +56,7 @@ nav{
 		margin: 0.5em auto 0;
 		font-size: 1em;
 		line-height: 0.8em;
-		width: 80%;
+		width: 100%;
 	}
 	.category_title{
 		color: #ccc !important;
@@ -130,6 +130,12 @@ footer{
 			padding-bottom: 10px;
 			color: #a9a9a9;
 			font-size: 1.2em;
+		}
+	}
+	.good_icon{
+		font-size: 1em;
+		i{
+			color: #f4426b;
 		}
 	}
 }

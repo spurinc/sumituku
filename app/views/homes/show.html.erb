@@ -16,7 +16,11 @@
 	<div class="prof_block prof_info">
 	<p><%= current_user.username %></p>
 	<% if current_user.creator_buyer != nil %>
-		<p><%= current_user.creator_buyer %></p>
+		<% if current_user.creator_buyer == "creator" %>
+			<p>作り手</p>
+		<% else %>
+			<p>買い手</p>
+		<% end %>
 	<% end %>
 	</div>
 </div>
@@ -37,12 +41,14 @@
 	<div class="detail_link_block">
 		<%= link_to 'お気に入り', homes_favorites_path %>
 	</div>
+	<% if current_user.creator_buyer == "creator" %>
 	<div class="detail_link_block">
 		<%= link_to '出品一覧', homes_myproduct_path %>
 	</div>
 	<div class="detail_link_block">
 		<%= link_to '出品する', new_furniture_path %>	
 	</div>
+	<% end %>
 </div>
 
 <div class="logout_block mypage_link">
