@@ -250,7 +250,26 @@ footer{
 }
 
 
-
+@media screen and (min-width: 641px){
+	.furniture_container{
+		width: 70%;
+		margin: 0 auto;
+		#sumituku_block{
+			.crator_img_block{
+				width: 50%;
+				margin: 0 auto;
+			}
+		}
+	}
+	#furniture_detail_top,#kodawari,#delivery_size{
+		width: 70%;
+		margin: 0 auto;
+		.furniture_top_img,.kodawari_img{
+			width: 50%;
+			margin: 0 auto;
+		}
+	}
+}
 
 
 
