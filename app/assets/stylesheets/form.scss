@@ -1,4 +1,7 @@
 // userのログインとか登録form関連
+
+@import "./variables";
+
 .devise_form{
 	h2{
 		text-align: center;
@@ -10,28 +13,25 @@
 	}
 }
 .twBtn{
-	background-color: #4AB3F4;
+	background-color: $twBtn;
 	margin: 10px auto;
 	padding: 0.5em 1em;
 	text-align: center;
-	color: #fff;
+	color: $white;
 	i.fa-facebook,i.fa-twitter,.twBtn a.login_txt{
 		font-size: 1.1em;
-		color: #fff;
+		color: $white;
 	}
 	a:visited{
-		color: #fff;
+		color: $white;
 	}
 }
 
 .MailLoginBtn{
-	border: #767676 solid 2px;
-	margin: 5px auto;
-	padding: 0.2em 1em;
 	text-align: center;
-	a.maillogin_txt{
-		font-size: 1.1em;
+	a.form-control{
 		text-align: center;
+		color: $link_default;
 	}
 
 }
@@ -40,7 +40,6 @@
     display: table;
     text-align: center;
     white-space: nowrap;
- 	// width: 80%;
  	margin: 1em auto;
  	color: #aaa;
     &:after,
