@@ -62,10 +62,14 @@
 
 @media screen and (min-width: 641px){
 div.container.devise_form{
-	width: 70%;
-	margin: 0 auto;
+	width: 50%;
+	margin: 9 auto;
 	div.field{
 		margin-bottom: 1.5em;
+	}
+	.twBtn,.MailLoginBtn{
+	// 	width: 60%;
+		margin: 1em auto;
 	}
 }
 
