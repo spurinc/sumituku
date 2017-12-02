@@ -186,7 +186,6 @@ footer{
 		list-style: none;
 		padding: 0;
 		white-space:nowrap;
-		// width: 150%;
 		overflow: scroll;
 		li.product_block{
 			height: 300px;
@@ -250,7 +249,26 @@ footer{
 }
 
 
-
+@media screen and (min-width: 641px){
+	.furniture_container{
+		width: 70%;
+		margin: 0 auto;
+		#sumituku_block{
+			.crator_img_block{
+				width: 50%;
+				margin: 0 auto;
+			}
+		}
+	}
+	#furniture_detail_top,#kodawari,#delivery_size{
+		width: 65%;
+		margin: 0 auto;
+		.furniture_top_img,.kodawari_img{
+			width: 50%;
+			margin: 0 auto;
+		}
+	}
+}
 
 
 
