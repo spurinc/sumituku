@@ -1,47 +1,100 @@
-<% if notice != nil %>
-  <p id="notice"><%= notice %></p>
-<% end %>
+      <div class="furniture_container">
+      
+      <!-- 最近の人気商品 -->
+      <!-- まだ新着順のみ -->
+        <section id="recently_popular">
+          <h2>最近の人気商品</h2>
+          <ul class="recently_popular_blocks">
+            <% @furnitures.each do |furniture| %>
+            <li class="product_block">
+              <div class="furniture_img">
+                <%= image_tag furniture.furniture_image %>
+              </div>
+              <div class="product_text">
+                <% user = User.find_by(id: furniture.user_id) %>
+                <p>
+                  <% if user.prof_img.file.nil? %>
+                    <span><%= image_tag 'Gravatar-icon.png' %></span>
+                  <% else %>
+                    <span><%= image_tag user.prof_img %></span>
+                  <% end %>  
+                  <%= user.username %>
+                </p>
+                <div class="product_kodawari_block">
+                  <h4><%= link_to furniture.name, furniture %></h4>            
+                  <p><%= furniture.kodawari_point %></p>
+                </div>
+                <p><%= furniture.price %>円</p>
+              </div>
+            </li>
+            <% end %>
+          </ul>
+        </section>
 
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-  <h1 class="logo">
-    <%= link_to 'SUMITUKU', furnitures_path %>
-  </h1>
-  <a class="category_title" href="#">一覧</a>
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <i class="fa fa-search" aria-hidden="true"></i>
-  </button>
-  <div class="collapse navbar-collapse search_block" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-    </ul>
-    <%= form_tag furnitures_path, :method => 'get' do %>
-    <div class="input-group">
-      <%= text_field_tag :search, params[:search], class: 'form-control font-awesome', placeholder: "\uF002",id: "inlineFormInputGroup" %>
-      <%= submit_tag "検索",class: 'input-group-addon search_button' %>
-    </div>
-  <% end %>
-  </div>
-</nav>
-    <% @furnitures.each do |furniture| %>
-      <div class="furniture_block">
-        <div class="furniture_img_block">
-          <%= image_tag furniture.furniture_image %>
-        </div>
-        <div>
-          <h3><%= furniture.name %></h3>
-          <p>カテゴリ：<%= furniture.category %></p>
-          <p>値段<%= furniture.price %>円</p>
-          <p><%= sanitize(simple_format(furniture.furniture_about), :tags => %w(p br)) %>
+        <!-- モック通りにテーブルカテゴリを表示 -->
+        <section id="category_popular">
+          <h2>テーブルの人気商品</h2>
+          <ul class="recently_popular_blocks">
+            <% @furnitures.each do |furniture| %>
+              <% if furniture.category == "table" %>
+                <li class="product_block">
+                  <div class="furniture_img">
+                    <%= image_tag furniture.furniture_image %>
+                  </div>
+                  <div class="product_text">
+                    <% user = User.find_by(id: furniture.user_id) %>
+                    <p>
+                      <% if user.prof_img.file.nil? %>
+                        <span><%= image_tag ('Gravatar-icon.png') %></span>
+                      <% else %>
+                        <span><%= image_tag user.prof_img %></span>
+                      <% end %>  
+                      <%= user.username %>
+                    </p>
+                    <div class="product_kodawari_block">
+                      <h4><%= link_to furniture.name, furniture %></h4>            
+                      <p><%= furniture.kodawari_point %></p>
+                    </div>
+                    <p><%= furniture.price %>円</p>
+                  </div>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </section>
+
+
+    
+<!--         <section id="furniture_detail_top">
+          <%# @furnitures.each do |furniture| %>
+          <div class="furniture_top_img">
+        		<%#= image_tag furniture.furniture_image %>
+        	</div>
+
+        	<div class="furniture_about_text">
+        		<h3><%#= link_to furniture.name, furniture %></h3>
+
+        		<div class="furniture_description">
+        			<%#= furniture.furniture_about %>
+        		</div>
+
+        		<div class="furniture_price">
+        			<%#= furniture.price %>円
+        		</div>
+        	</div>
           </p>
-          
-          <p>
-          <%= link_to '詳細', furniture %>
-          <%= link_to '編集', edit_furniture_path(furniture) %>
-          <%= link_to '削除', furniture, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </p>
+          <%# end %>
+        </section> -->
+
+
+        <!-- SUMITUKUについて -->
+        <section id="sumituku_block">
+          <div class="crator_img_block">
+            <%= image_tag 'creator.jpg' %>
           </div>
+          <h2>SUMITUKUとは</h2>
+        </section>
+
       </div>
-    <% end %>
-
-<br>
-
-<%= link_to 'New Furniture', new_furniture_path %>
+    
+<%#= link_to 'New Furniture', new_furniture_path %>

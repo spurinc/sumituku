@@ -2,12 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "./variables";
+
+// 家具関連
+
+
+// 共通部分
+body{
+ 	background-color: $bg_color;
+}
+
 // header
+.navbar-container {
+	border: 1.2px solid $gray;
+	padding: 12px 5px;
+}
+
+.category_title{
+	 .fa-user-circle{
+	 	font-size: 1.5em;
+	 }
+}
+.fa-search {
+	color: $gray;
+}
+
 nav{
-	background-color: #fff;
-	border-bottom: 2px solid #ccc;
+	background-color: $white;
 	line-height: 1.5em;
-	margin-bottom: 1em;
 	font-size: 1.3em;
 	position: relative;
 	h1.logo{
@@ -16,10 +38,15 @@ nav{
 		right: 0;
 		left: 0;
 		font-size: 1em;
+		font-weight: 300;
 		display: inline;
 		line-height: 1.5em;
+		width: 30%;
+		margin: 0 auto;
+		a {
+			color: $gray;
+		}
 	}
-
 	.navbar-toggler{
 		border: none;
 	}
@@ -30,7 +57,12 @@ nav{
 		margin: 0.5em auto 0;
 		font-size: 1em;
 		line-height: 0.8em;
-		width: 80%; 
+		width: 100%;
+	}
+	.category_title{
+		color: $gray !important;
+		font-weight: 300;
+		width: 20%;
 	}
 	// placeholderにfontawesome
 	input.font-awesome#inlineFormInputGroup{
@@ -44,11 +76,9 @@ nav{
 	}
 }
 
-
-
 .furniture_block{
 	margin-bottom: 1em;
-	border-bottom: 1px solid #333;
+	border-bottom: 1px solid $base_text;
 	.furniture_img_block{
 		img{
 			max-width: 100%;
@@ -56,40 +86,206 @@ nav{
 	}
 }
 
+.furniture_container{
+	border-bottom: 1px solid $gray;
+}
 
-// show.html.erb
-#furnitura_detail_top{
+
+// footer
+footer{
+	background-color: $bg_color;
+	margin-top: 1em;
+	.company_info{
+		padding:0.5em;
+		h3,h4,p{
+			margin: 0.4em 0;
+		}
+		h3,h4{
+			font-size: 1.2em;
+		}
+	}
+}
+
+
+
+// furnitures/show.html.erb
+#furniture_detail_top{
 	.furniture_top_img{
+		padding: 10px;
 		img{
 			width: 100%;
 		}
 	}
 	.furniture_about_text{
-		margin: 1em;
+		margin: 0 10px;
+		h3 {
+			color: $base_text;
+			margin: 20px 0;
+		}
+		.furniture_description{
+			color: $base_text;
+			line-height: 1.5;
+			margin-bottom: 20px;
+		}
+		.furniture_price{
+			padding-bottom: 10px;
+			color: $base_text;
+			font-size: 1.2em;
+		}
+	}
+	.good_icon{
+		font-size: 1em;
+		i{
+			color: $accent_color;
+		}
 	}
 }
 #kodawari{
 	.kodawari_img{
+		padding: 10px;
 		img{
 			width: 100%;
 		}
 	}
 	.kodawari_text{
-		margin: 1em;
-	}	
+		margin: 0 10px;
+		h3 {
+			color: $base_text;
+			margin: 20px 0;
+		}
+		.kodawari_description{
+			color: $base_text;
+			line-height: 1.5;
+			margin-bottom: 20px;
+		}
+	}
 }
 
 // 購入CTA
 .purchase_block{
-	background-color: #d1718e;
-	color: #fff;
-	width: 100%;
-	p{
+	background-color: $accent_color;
+	color: $white;
+	padding: 20px 20px;
+	line-height: 1.5em;
+	margin: 30px 10px;
+}
+
+.fa-shopping-cart{
+	margin-right: 10px;
+}
+
+
+#recently_popular,#category_popular{
+	margin-bottom: 2.5em;
+	h2{
+		font-size: 1.3em;
+		color: $base_text;
+		margin: 1em 0.2em 0.5em;
+	}
+	.recently_popular_blocks{
+		list-style: none;
+		padding: 0;
+		white-space:nowrap;
+		overflow: scroll;
+		li.product_block{
+			height: 300px;
+			width: 180px;
+			background-color: $white;
+			border:1px solid $gray;
+			margin: 0 0.3em;
+			display: inline-block;
+			.furniture_img{
+				margin: 0.5em;
+				height: 150px;
+				img{
+					width: 165px;
+					height: 150px;
+					border-radius: 5px;
+				}
+			}
+			.product_text{
+				margin: 0.5em;
+				img{
+					width: 2.6em;
+					height: 2.6em;
+					border-radius: 50%;
+
+				}
+				.product_kodawari_block{
+					h4{
+						margin-bottom: 0.1em;
+						font-size: 1.3em;
+					}
+					p{
+	  					word-break: break-all;
+	  					white-space: normal;
+	  					color: $gray;
+	  					margin-top: 0;
+	  					font-size: 0.9em;
+	  					margin-left: 0.1em;
+					}
+				}
+			}
+
+		}
+	}
+}
+
+#sumituku_block{
+	margin-top: 3em;
+	.crator_img_block{
+		width: 98%;
+		margin: 0 auto;
+		img{
+			text-align: center;
+			width: 100%;
+		}		
+	}
+	h2{
 		text-align: center;
-		padding: 0.4em 0;
-		line-height: 1.5em;
-		font-size: 1.5em;	
-	}	
-}	
+		font-weight: 1.3em;
+	}
+
+}
+
+
+// furniture/new.html.erb
+#furniture_registant{
+	width: 95%;
+	margin: 1em auto;
+	h1{
+		margin-top: 0.5em;
+	}
+}
+
+
+
+
+
+
+
+
+@media screen and (min-width: 641px){
+	.furniture_container{
+		width: 70%;
+		margin: 0 auto;
+		#sumituku_block{
+			.crator_img_block{
+				width: 50%;
+				margin: 0 auto;
+			}
+		}
+	}
+	#furniture_detail_top,#kodawari,#delivery_size{
+		width: 65%;
+		margin: 0 auto;
+		.furniture_top_img,.kodawari_img{
+			width: 50%;
+			margin: 0 auto;
+		}
+	}
+}
+
+
 
 // kodawari

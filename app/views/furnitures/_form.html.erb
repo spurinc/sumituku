@@ -1,8 +1,8 @@
 <%= form_with(model: furniture, local: true) do |form| %>
   <% if furniture.errors.any? %>
+  <!-- エラーメッセージ表示 -->
     <div id="error_explanation">
       <h2><%= pluralize(furniture.errors.count, "error") %> prohibited this furniture from being saved:</h2>
-
       <ul>
       <% furniture.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+<!-- bootstrapでformを装飾しています。 -->
   <div class="field form-group">
     <%= form.label :name,"名前" %>
     <%= form.text_field :name, id: :furniture_name, :class => "form-control" %>
@@ -61,7 +62,11 @@
     <div class="field form-group">
     <%= form.label :delivery,"配送方法" %>
     <%= form.text_area :delivery, id: :delivery,:rows=>"5", :class => "form-control" %>
-  </div>  
+  </div>
+  
+  <!-- 登録した家具をユーザーを紐付け -->
+  <%= form.hidden_field :user_id, :value => current_user.id %>
+
 
   <div class="actions">
     <%= form.submit "作成する",:class=>"btn btn-primary"%>

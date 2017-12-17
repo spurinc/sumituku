@@ -1,0 +1,76 @@
+// userのログインとか登録form関連
+
+@import "./variables";
+
+.devise_form{
+	h2{
+		text-align: center;
+		font-size: 1.3em;
+		margin: 0.3em;
+	}
+	.actions{
+		text-align: center;
+	}
+}
+.twBtn{
+	background-color: $twBtn;
+	margin: 10px auto;
+	padding: 0.5em 1em;
+	text-align: center;
+	color: $white;
+	i.fa-facebook,i.fa-twitter,.twBtn a.login_txt{
+		font-size: 1.1em;
+		color: $white;
+	}
+	a:visited{
+		color: $white;
+	}
+}
+
+.MailLoginBtn{
+	text-align: center;
+	a.form-control{
+		text-align: center;
+		color: $link_default;
+	}
+
+}
+
+.lines-on-sides {
+    display: table;
+    text-align: center;
+    white-space: nowrap;
+ 	margin: 1em auto;
+ 	color: #aaa;
+    &:after,
+    &:before {
+        content: '';
+        display: table-cell;
+        width: 50%;
+        background: linear-gradient(transparent 50%, currentColor 50%, currentColor calc(50% + 2px), transparent calc(50% + 2px));
+        background-clip: padding;
+    }
+ 
+    &:after {
+        border-left: 1em solid transparent;
+    }
+ ¥
+    &:before {
+        border-right: 1em solid transparent;
+    }
+}
+
+@media screen and (min-width: 641px){
+div.container.devise_form{
+	width: 50%;
+	margin: 9 auto;
+	div.field{
+		margin-bottom: 1.5em;
+	}
+	.twBtn,.MailLoginBtn{
+	// 	width: 60%;
+		margin: 1em auto;
+	}
+}
+
+}

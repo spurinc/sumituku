@@ -43,6 +43,16 @@ gem 'payjp'
 # 画像保存+表示
 gem 'carrierwave'
 gem 'rmagick', require: 'RMagick'
+gem 'cloudinary'
+
+gem 'payjp'
+
+# ログイン
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+
 
 
 group :development, :test do

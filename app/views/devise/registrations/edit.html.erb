@@ -1,0 +1,96 @@
+<div class="container devise_form">
+
+<h2>編集</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :username, "名前" %><br />
+    <%= f.text_field :username, autofocus: true, :placeholder => '名前', class: 'form-control login_mail_form font-awesome' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email,:placeholder => 'メールアドレス', class: 'form-control login_mail_form font-awesome' %>
+  </div>
+
+    <div class="field">
+      <%= f.label :prof_img,"プロフィール画像" %><br />
+      <%= f.file_field :prof_img, class: 'form-control-file login_mail_form' %>
+    </div>
+
+    <div class="field">
+      <label><%= f.radio_button :creator_buyer, "creator" %>作り手</label>
+      <label><%= f.radio_button :creator_buyer, "buyer" %>買い手</label>
+    </div>
+
+    
+
+    <div class="field">
+      <%= f.label :postnum, "郵便番号" %><br />
+      <%= f.text_field :postnum, :placeholder => '郵便番号', class: 'form-control login_mail_form font-awesome',size: 10,maxlength: 8 %>
+    </div>
+        
+    <input type="button" id="autoinput" value="自動入力" class="btn btn-primary col-xs-12" />
+
+    <div class="field">
+      <%= f.label :pref, "都道府県" %><br />
+      <%= f.text_field :pref, :placeholder => '都道府県', class: 'form-control login_mail_form font-awesome',size: 20 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :city, "市区町村" %><br />
+      <%= f.text_field :city, :placeholder => '都道府県', class: 'form-control login_mail_form font-awesome',size: 60 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :addr, "番地以下" %><br />
+      <%= f.text_field :addr, :placeholder => '1-1-1', class: 'form-control login_mail_form font-awesome',size: 60 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :building, "部屋番号" %><br />
+      <%= f.text_field :building, :placeholder => '◯◯マンション101', class: 'form-control login_mail_form font-awesome',size: 60 %>
+    </div>
+    
+
+
+<% if false %>
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
+  </div>
+
+<% end %>
+
+  <div class="actions">
+    <%= f.submit "更新",class: "btn btn-success" %>
+  </div>
+<% end %>
+
+<% if false %>
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<% end %>
+<%= link_to "戻る", :back %>
+</div>

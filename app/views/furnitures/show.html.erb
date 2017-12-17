@@ -1,51 +1,69 @@
-<% if notice != nil %>
-	<p id="notice"><%= notice %></p>
-<% end %>
+<!-- モックにおける上部分おn商品説明 -->
+<section id="furniture_detail_top">
+	<!-- トップ画像 -->
+	<div class="furniture_top_img">
+		<%= image_tag @furniture.furniture_image %>
+	</div>
 
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-	<h1 class="logo"><%= link_to 'SUMITUKU', furnitures_path %></h1>
-	<a class="category_title" href="#"><%= @furniture.category %></a>
-	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		<i class="fa fa-search" aria-hidden="true"></i>
-	</button>
-  <div class="collapse navbar-collapse search_block" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-    </ul>
-    <%= form_tag furnitures_path, :method => 'get' do %>
-	  <div class="input-group">
-	  	<%= text_field_tag :search, params[:search], class: 'form-control font-awesome', placeholder: "\uF002",id: "inlineFormInputGroup" %>
-	  	<%= submit_tag "検索",class: 'input-group-addon search_button' %>
-	  </div>
-	<% end %>
-  </div>
-</nav>
+	<!-- トップのテキスト（説明文） -->
+	<div class="furniture_about_text">
+		<!-- 家具名 -->
+		<h3><%= @furniture.name %></h3>
 
-<section id="furnitura_detail_top">
-<div class="furniture_top_img">
-	<%= image_tag @furniture.furniture_image %>
-</div>
-<div class="furniture_about_text">
-	<h3><%= @furniture.name %></h3>
-	<p><%= sanitize(simple_format(@furniture.furniture_about), :tags => %w(p br)) %></p>
-	<p>値段：<%= @furniture.price %>円</p>
+		<% if user_signed_in? %>
+			  <% if Favorite.find_by(user_id: current_user.id, furniture_id: @furniture.id) %>
+	        	<%= link_to("/favorites/#{@furniture.id}/destroy",{method: "post"}) do %>
+	        		<p class="good_icon">
+	        			<i class="fa fa-heart" aria-hidden="true"></i>お気に入り！済み
+	        		</p>
+	        	<% end %>
+	        <% else %>
+	        	<%= link_to("/favorites/#{@furniture.id}/create",{method: "post"}) do %>
+	        		<p class="good_icon">
+	        			<i class="fa fa-heart-o" aria-hidden="true"></i>お気に入り！
+	        		</p>
+	        	<% end %>
+	        <% end %>
+	    <% else %>
+	    	<%= link_to new_user_registration_path do %>
+  				<p class="good_icon">
+  					<i class="fa fa-heart-o" aria-hidden="true"></i>お気に入り！
+  				</p>
+			  <% end %>
+    <% end %>
 
-</div>
+		<!-- 家具の概要 -->
+		<div class="furniture_description">
+			<%= @furniture.furniture_about %>
+		</div>
 
-<div class="purchase_block">
-	<p><i class="fa fa-shopping-cart" aria-hidden="true"></i>カートへ進む ></p>
-</div>
-
+		<!-- 家具の値段 -->
+		<div class="furniture_price">
+			<%= @furniture.price %>円
+		</div>
+	</div>
+	<!-- 購入CTA -->
+	<div class="purchase_block">
+		<i class="fa fa-shopping-cart" aria-hidden="true" ></i>
+		<span>カートに進む</span>
+	</div>
 </section>
+
+
 <!-- こだわり -->
 <section id="kodawari">
-<div class="kodawari_img">
-	<%= image_tag @furniture.kodawari_img %>
-</div>
+	<!-- こだわり（商品説明以外）の画像 -->
+	<div class="kodawari_img">
+		<%= image_tag @furniture.kodawari_img %>
+	</div>
 
-<div class="kodawari_text">
-	<h3><%= @furniture.kodawari_point %></h3>
-	<p><%= sanitize(simple_format(@furniture.kodawari_about), :tags => %w(p br)) %></p>
-</div>
+	<!-- こだわりを説明する説明文 -->
+	<div class="kodawari_text">
+		<h3><%= @furniture.kodawari_point %></h3>
+		<div class="kodawari_description">
+			<%= @furniture.kodawari_about %>
+		</div>
+	</div>
 </section>
 
 <section id="delivery_size">
@@ -58,12 +76,22 @@
 			<th>配送</th>
 			<td><%= sanitize(simple_format(@furniture.delivery), :tags => %w(p br)) %></td>
 		</tr>
+		<tr>
+			<th>作り手</th>
+			<td><%= @user.username %></td>
+		</tr>
 	</table>
+	<div class="purchase_block">
+		<i class="fa fa-shopping-cart" aria-hidden="true" ></i>
+		<span>カートに進む</span>
+	</div>
 </section>
 
-<div class="purchase_block">
-	<p><i class="fa fa-shopping-cart" aria-hidden="true"></i>カートへ進む ></p>
-</div>
 
+
+<% if user_signed_in? %>
+<% if @user.id == current_user.id %>
 <%= link_to 'Edit', edit_furniture_path(@furniture) %> |
 <%= link_to 'Back', furnitures_path %>
+<% end %>
+<% end %>
