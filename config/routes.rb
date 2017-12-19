@@ -27,7 +27,6 @@ Rails.application.routes.draw do
   get 'products' => 'products#index'
   post 'products/pay' => 'products#pay'
 
-
   # 家具の検索を追加
   get 'furnitures/search' => "furnitures#search"
 
