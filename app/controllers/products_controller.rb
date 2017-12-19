@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-# 決済周りのコントローラー
+
+  # 決済周りのコントローラー
   def index
   end
 
@@ -11,5 +12,5 @@ class ProductsController < ApplicationController
       :card => params['payjp-token'],
       :currency => 'jpy',
   )
-end
+  end
 end

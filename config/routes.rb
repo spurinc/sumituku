@@ -19,8 +19,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # topページを設定
-  root to: 'furnitures#index'
-  
+  root 'products#index'
+  # root to: 'furnitures#index'
+  # さえきけしました
+
   # payjpの使用
   get 'products' => 'products#index'
   post 'products/pay' => 'products#pay'
