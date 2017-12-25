@@ -1,29 +1,23 @@
-		<section id="myproduct_block">
-          <h2>カート商品</h2>
-          <div class="row">
-            <% @publishes.each do |publish| %>
-              <% furniture = Furniture.find_by(id: publish.furniture_id) %>
-            <div class="product_block col-xs-6">
-              <div class="furniture_img">
-                <%= image_tag furniture.furniture_image %>
-              </div>
-              <div class="product_text">
-                <% @user = User.find_by(id: furniture.user_id) %>
-                <p>
-                  <% if @user.prof_img.file.nil? %>
-                    <span><%= image_tag 'Gravatar-icon.png' %></span>
-                  <% else %>
-                    <span><%= image_tag @user.prof_img %></span>
-                  <% end %>  
-                  <%= @user.username %>
-                </p>
-                <div class="product_kodawari_block">
-                  <h4><%= link_to furniture.name, furniture %></h4>            
-                  <p><%= furniture.kodawari_point %></p>
-                </div>
-                <p><%= furniture.price %>円</p>
-              </div>
-            </div>
-            <% end %>   
-            </div>       
-        </section>
+<section id="cart_block">
+  <h2>カート中の商品</h2>
+    <% @publishes.each do |publish| %>
+      <% furniture = Furniture.find_by(id: publish.furniture_id) %>
+      <table class="cart_solo_table">
+        <tbody>
+          <tr>
+            <th>商品名</th>
+            <td><%= image_tag furniture.furniture_image %>
+              <%= link_to furniture.name, furniture %></td>
+          </tr>
+          <tr>
+            <th>小計</th>
+            <td class="publish_detail_text"><%= furniture.price %>円</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td><%= link_to("削除", "/publishes/#{furniture.id}/destroy", {method: "post"}) %></td>
+          </tr>
+        </tbody>
+      </table>
+    <% end %>   
+</section>
