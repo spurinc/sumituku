@@ -1,5 +1,6 @@
 <section id="cart_block">
   <h2>カート中の商品</h2>
+
     <% @publishes.each do |publish| %>
       <% furniture = Furniture.find_by(id: publish.furniture_id) %>
       <table class="cart_solo_table">
@@ -12,6 +13,7 @@
           <tr>
             <th>小計</th>
             <td class="publish_detail_text"><%= furniture.price %>円</td>
+            <% @total_price += furniture.price %>
           </tr>
           <tr>
             <th></th>
@@ -19,5 +21,18 @@
           </tr>
         </tbody>
       </table>
-    <% end %>   
+    <% end %>
+</section>
+
+<section id="cart_sum">
+  <div class="cart_sum_block">
+    <table>
+      <tbody>
+        <tr>
+          <th>合計：</th>
+          <td><%= @total_price %>円</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </section>

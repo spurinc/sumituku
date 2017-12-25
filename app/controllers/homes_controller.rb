@@ -25,6 +25,7 @@ before_action :sign_in_required, only: [:show,:user]
   def carts
     @user = current_user
     @publishes = Publish.where(user_id: @user.id)
+    @total_price = 0
   end
 
 end

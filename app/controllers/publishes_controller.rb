@@ -5,7 +5,7 @@ class PublishesController < ApplicationController
 			furniture_id: params[:furniture_id]
 			)
 		@publish.save
-		redirect_to("/furnitures/#{params[:furniture_id]}")
+		redirect_to(homes_carts_path)
 	end
 
 	def destroy
@@ -14,7 +14,7 @@ class PublishesController < ApplicationController
 			furniture_id: params[:furniture_id]
 			)
 		@publish.destroy
-		redirect_to("/furnitures/#{params[:furniture_id]}")
+		redirect_to(homes_carts_path)
 	end
 
 	def show

@@ -43,3 +43,28 @@
 		}
 	}
 }
+#cart_sum{
+	.cart_sum_block{
+		background-color: #ffccfb;
+		color: #000;
+		width: 95%;
+		margin: 0 auto;
+		padding: 1em;
+		table{
+			width: 95%;
+			tbody{
+				tr{
+					th{
+						width: 50%;
+						font-size: 1.15em;
+					}
+					td{
+						width: 50%;
+						text-align: right;
+						font-size: 1.15em;
+					}
+				}
+			}
+		}
+	}
+}
