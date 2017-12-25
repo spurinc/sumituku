@@ -68,3 +68,42 @@
 		}
 	}
 }
+
+#publish_link{
+	width: 95%;
+	margin: 1.5em auto;
+	.publish_block{
+		border: 2px solid #f791ee;
+		border-radius: 5px;
+		color: #f791ee;
+		text-align: center;
+		p{
+			font-size: 1.2em;
+			line-height: 1.2em;
+			vertical-align: middle;
+			margin: 0.5em 0;
+		}
+	}
+}
+#credit_card{
+	width: 95%;
+	margin: 0 auto;
+	.row{
+		border: 1px solid $gray;
+		margin: 0 auto;
+		.credit_title{
+			 background-color: $bg_color;
+			 border: $gray;
+			 p{
+			 	font-size: 1.1em;
+			 	margin: 0.5em 0;
+			 }
+		}
+		.credit_list{
+			img{
+				margin: 0.5em 0;
+				max-width: 100%;
+			}
+		}
+	}
+}
