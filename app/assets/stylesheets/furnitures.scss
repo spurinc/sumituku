@@ -182,6 +182,7 @@ footer{
 		font-size: 1.3em;
 		color: $base_text;
 		margin: 1em 0.2em 0.5em;
+        font-weight:bold;
 	}
 	.recently_popular_blocks{
 		list-style: none;
@@ -246,14 +247,15 @@ footer{
      font-size: 1.3em;
      color: $base_text;
      margin: 1em 0.2em 0.5em;
+     font-weight:bold;
    }
    .recently_popular_blocks{
      list-style: none;
      padding: 0;
      white-space:nowrap;
      overflow: scroll;
-     li.product_block{
-       height: 230px;
+     li.category_block{
+       height: 100px;
        width: 130px;
        box-shadow:0 0 8px gray;
        background-color: $white;
@@ -264,7 +266,7 @@ footer{
          height: 150px;
          img{
            width: 100%;
-           height: 150px;
+           height: 70px;
          }
        }
        .product_text{
@@ -274,18 +276,12 @@ footer{
            height: 2.6em;
            border-radius: 50%;
          }
-         .product_kodawari_block{
+         .product_category{
            h4{
              margin-bottom: 0.1em;
-             font-size: 1.3em;
-           }
-           p{
-             word-break: break-all;
-             white-space: normal;
-             color: $gray;
-             margin-top: 0;
-             font-size: 0.9em;
-             margin-left: 3em;
+             font-size: 1.2em;
+             font-weight:bold;
+             font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
            }
          }
        }
@@ -293,6 +289,28 @@ footer{
      }
    }
  }
+
+
+#sale_block{
+  padding-left:10px;
+  padding-right:10px;
+  img{
+    width:100%;
+  }
+  .sale_title{
+    p{
+      font-size:1.2em;
+      text-align:center;
+      margin-top:10px;
+    }
+  }
+  .sale_content{
+    p{
+      text-align:center;
+
+    }
+  }
+}
 
 
 #sumituku_block{
