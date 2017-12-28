@@ -10,3 +10,18 @@
 # Funniture.create(id: "1",name: "テストイス",category: "chair",furniture_image: "aeronchair1.jpg",price: 7980,furniture_about: "")
 
 
+10.times do |i|
+  Furniture.create!(
+    name: "#{i}個目のtest",
+    category: nil,
+    furniture_image: open("app/assets/images/creator.jpg"),
+    price: 1000,
+    furniture_about: "this form was made as the test",
+    kodawari_img: nil,
+    kodawari_point: nil,
+    kodawari_about: nil,
+    size: nil,
+    delivery: nil,
+    user_id: 1
+  )
+end

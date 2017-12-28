@@ -3,7 +3,7 @@
       <!-- 最近の人気商品 -->
       <!-- まだ新着順のみ -->
         <section id="recently_popular">
-          <h2>最近の人気商品</h2>
+          <h2>人気商品から探す</h2>
           <ul class="recently_popular_blocks">
             <% @furnitures.each do |furniture| %>
             <li class="product_block">
@@ -17,14 +17,12 @@
                     <span><%= image_tag 'Gravatar-icon.png' %></span>
                   <% else %>
                     <span><%= image_tag user.prof_img %></span>
-                  <% end %>  
-                  <%= user.username %>
+                  <% end %>
+                  <%= link_to furniture.name, furniture %>
                 </p>
                 <div class="product_kodawari_block">
-                  <h4><%= link_to furniture.name, furniture %></h4>            
-                  <p><%= furniture.kodawari_point %></p>
+                  <p><%= furniture.price %>円</p>
                 </div>
-                <p><%= furniture.price %>円</p>
               </div>
             </li>
             <% end %>
@@ -33,7 +31,7 @@
 
         <!-- モック通りにテーブルカテゴリを表示 -->
         <section id="category_popular">
-          <h2>テーブルの人気商品</h2>
+          <h2>カテゴリから探す</h2>
           <ul class="recently_popular_blocks">
             <% @furnitures.each do |furniture| %>
               <% if furniture.category == "table" %>
