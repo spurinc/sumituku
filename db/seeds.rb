@@ -12,8 +12,8 @@
 
 10.times do |i|
   Furniture.create!(
-    name: "#{i}個目のtest",
-    category: nil,
+    name: "#{i+1}個目のtest",
+    category: 2,
     furniture_image: open("app/assets/images/creator.jpg"),
     price: 1000,
     furniture_about: "this form was made as the test",

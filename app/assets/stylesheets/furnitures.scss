@@ -40,7 +40,13 @@ nav{
 			color: $gray;
 		}
 	}
-  form{
+  button{
+    background-color:white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    height:30px;
+    margin-top:5px;
   }
   .input-group{
     width:240px;
