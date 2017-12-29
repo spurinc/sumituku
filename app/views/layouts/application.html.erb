@@ -17,42 +17,18 @@
   </head>
 
   <body>
-    <div class="navbar-container">
-      <nav class="navbar navbar-toggleable-md navbar-light">
-
-        <h1 class="logo">
-          <%= link_to 'SUMITUKU', furnitures_path %>
-        </h1>
-
-        <% if @furniture == nil || current_page?(new_furniture_path) %>
-          <% if user_signed_in? %>
-            <%= link_to homes_show_path,  class: "category_title" do %>
-              <i class="fa fa-user-circle" aria-hidden="true"></i>
+    <nav class="form">
+      <h1 class="logo">
+        <%= link_to "ロゴ",furnitures_path%></h1>
+      <%= form_tag furnitures_path, :method => 'get' do %>
+          <div class="input-group">
+            <%= button_tag :type => "submit" do %>
+                <i class="fa fa-search"></i>
             <% end %>
-          <% else %>
-            <%= link_to '登録', new_user_registration_path, class: 'category_title' %>
-          <% end %>
-        <% else %>
-            <a class="category_title" href="#"><%= @furniture.category %></a>
-        <% end %>
-
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </button>
-
-        <div class="collapse navbar-collapse search_block" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-          </ul>
-          <%= form_tag furnitures_path, :method => 'get' do %>
-            <div class="input-group">
-              <%= text_field_tag :search, params[:search], class: 'form-control font-awesome', placeholder: "\uF002",id: "inlineFormInputGroup" %>
-              <%= submit_tag "検索",class: 'input-group-addon search_button' %>
-            </div>
-          <% end %>
-        </div>
-
-      </nav>
-    </div>
+            <%= text_field_tag :search, params[:search], placeholder: "ソファなどのキーワードを検索",class: 'form-design' %>
+          </div>
+      <% end %>
+    </nav>
 
     <% if notice != nil %>
       <p id="notice"><%= notice %></p>
@@ -76,11 +52,6 @@
       </div>
     </footer>
 
-    <script type="text/javascript">
-    $("#autoinput").click(function() {
-      AjaxZip3.zip2addr('user[postnum]', '', 'user[pref]', 'user[city]', 'user[addr]');
-    });
-  </script>
 
   </body>
 </html>

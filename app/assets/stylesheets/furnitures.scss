@@ -13,11 +13,6 @@ body{
 }
 
 // header
-.navbar-container {
-	border: 1.2px solid $gray;
-	padding: 12px 5px;
-}
-
 .category_title{
 	 .fa-user-circle{
 	 	font-size: 1.5em;
@@ -29,51 +24,53 @@ body{
 
 nav{
 	background-color: $white;
-	line-height: 1.5em;
-	font-size: 1.3em;
-	position: relative;
+    height:30px;
+    margin-top:0.5em;
+    margin-bottom:2em;
+    padding-right:10px;
+    padding-left:10px;
 	h1.logo{
-		text-align: center;
-		position: absolute;
-		right: 0;
-		left: 0;
 		font-size: 1em;
 		font-weight: 300;
 		display: inline;
 		line-height: 1.5em;
-		width: 30%;
-		margin: 0 auto;
+        width:50px;
+        float:left;
 		a {
 			color: $gray;
 		}
 	}
-	.navbar-toggler{
-		border: none;
-	}
-	.navbar-brand{
-		text-align: center;
-	}
-	.search_block{
-		margin: 0.5em auto 0;
-		font-size: 1em;
-		line-height: 0.8em;
-		width: 100%;
-	}
-	.category_title{
-		color: $gray !important;
-		font-weight: 300;
-		width: 20%;
-	}
-	// placeholderにfontawesome
-	input.font-awesome#inlineFormInputGroup{
-	    font-family: FontAwesome;
-	    font-style: normal;
-	    font-weight: normal;
-	    font-size: 1em;
-	    text-decoration: inherit;
-	    -webkit-font-smoothing: antialiased;
-	    -moz-osx-font-smoothing: grayscale;
-	}
+  form{
+  }
+  .input-group{
+    width:240px;
+    height:40px;
+    border:0.5px solid $gray;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    input#search{
+      font-size:1em;
+      width:80%;
+      height:35px;
+    }
+    input#search::-webkit-input-placeholder{
+      font-size:0.8em;
+      word-wrap: break-word;
+      white-space:normal;
+    }
+    input#search:-ms-input-placeholder{
+      font-size:0.8em;
+      word-wrap: break-word;
+      white-space:normal;
+    }
+    input#search::-moz-placeholder{
+      font-size:0.8em;
+      word-wrap: break-word;
+      white-space:normal;
+    }
+  }
+
 }
 
 .furniture_block{
