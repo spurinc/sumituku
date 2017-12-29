@@ -93,16 +93,28 @@ nav{
 
 // footer
 footer{
-	background-color: $bg_color;
+	background-color: $white;
 	margin-top: 1em;
 	.company_info{
+        margin-left:10px;
 		padding:0.5em;
 		h3,h4,p{
 			margin: 0.4em 0;
 		}
 		h3,h4{
 			font-size: 1.2em;
+            color:#BBBDBE;
 		}
+        a{
+          line-height:1.2em;
+          color:#BBBDBE;
+        }
+        i.fa{
+          margin-top:10px;
+          color:#BBBDBE;
+          font-size:1.4em;
+          margin-right:0.5em;
+        }
 	}
 }
 
@@ -190,7 +202,7 @@ footer{
 		white-space:nowrap;
 		overflow: scroll;
 		li.product_block{
-			height: 220px;
+			height: 210px;
 			width: 170px;
             box-shadow:0 0 8px gray;
 			background-color: $white;
@@ -217,6 +229,7 @@ footer{
                     color:black;
                     font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
                     font-weight:bold;
+                    font-size:1.1em;
                   }
                 }
 				.product_kodawari_block{
