@@ -1,4 +1,6 @@
 class Furniture < ApplicationRecord
+  enum Deliverystatus: {unpurchased: 0,purchased: 1,shipped: 2}
+  
   # carrierwaveを使用
   # 家具のtop画像
 	 mount_uploader :furniture_image, ImageUploader

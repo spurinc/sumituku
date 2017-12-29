@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171225073904) do
+ActiveRecord::Schema.define(version: 20171229110552) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer "furniture_id"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20171225073904) do
     t.text "size"
     t.text "delivery"
     t.integer "user_id"
+    t.integer "Deliverystatus"
   end
 
   create_table "publishes", force: :cascade do |t|

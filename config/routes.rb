@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'homes/myproduct'
   get 'homes/favorites' => 'homes#favorites'
   get 'homes/carts' => 'homes#carts'
+  post 'homes/carts/pay' => 'homes#pay'
 
   # 家具のパスを設定
   resources :furnitures

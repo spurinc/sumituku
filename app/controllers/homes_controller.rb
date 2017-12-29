@@ -28,5 +28,26 @@ before_action :sign_in_required, only: [:show,:user]
     @total_price = 0
   end
 
+  def pay
+
+    #カートの金額を
+    user = current_user
+    total_price = 0
+    publishes = Publish.where(user_id: user.id)
+    publishes.each do |publish|
+      furniture = Furniture.find_by(id: publish.furniture_id)
+      total_price += furniture.price
+      furniture.Deliverystatus = 'purchased'
+      publish.destroy
+    end
+    Payjp.api_key = 'sk_test_680f07880976f1207457ef20'
+    binding.pry
+    charge = Payjp::Charge.create(
+      :amount => total_price,
+      :card => params['payjp-token'],
+      :currency => 'jpy',
+    )
+  end
+
 end
 
