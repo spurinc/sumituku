@@ -63,40 +63,29 @@
         <!-- スタッフのおすすめ商品 -->
         <section id="article">
           <h2>スタッフのおすすめ商品</h2>
-          <div class="article_thumb">
-          <%= image_tag 'article_thumb'%>
-          </div>
-          <div class="recommend_list">
-            <p>おすすめ一覧＞</p>
-          </div>
-
-          <% if false%>
-
-          <ul class="recently_article_blocks">
-            <% @articles.each do |article| %>
-                <li class="article_block">
+          <div class="recently_article_blocks">
+                <div class="article_block">
                   <div class="article_img">
-                    <%= image_tag article.article_image %>
+                    <p><%= image_tag 'article_thumb' %></p>
                   </div>
                   <div class="article_text">
-                    <% user = User.find_by(id: furniture.user_id) %>
+                    <a href="#">人気のスツール工房に見学に行ってきました！</a>
                     <p>
-                      <% if user.prof_img.file.nil? %>
-                          <span><%= image_tag 'Gravatar-icon.png' %></span>
-                      <% else %>
-                          <span><%= image_tag user.prof_img %></span>
-                      <% end %>
-                      <%= link_to article.title, article %>
+                      <span><%= image_tag 'Gravatar-icon.png' %>
+                        sumitukuスタッフ あずさ</span>
                     </p>
                   </div>
-                </li>
-            <% end %>
-          </ul>
+                </div>
+          </div>
+          <% if false%>
           <div class="recommend_list">
             <%= link_to 'おすすめ一覧＞',articles_path %>
           </div>
 
           <% end %>
+          <div class="recommend_list">
+            <a href="#">おすすめ一覧＞</a>
+          </div>
         </section>
 
 
