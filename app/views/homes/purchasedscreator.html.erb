@@ -29,6 +29,12 @@
               </td>
             </tr>
             <tr>
+              <th>購入日時</th>
+              <td class="publish_detail_text">
+                <%= purchaseds.created_at.strftime('%Y/%m/%d %H:%m') %>
+              </td>
+            </tr>
+            <tr>
               <th>配送状況を更新する</th>
               <td class="publish_detail_text">
                 <%= form_tag("/purchaseds/#{purchaseds.id}") do %>

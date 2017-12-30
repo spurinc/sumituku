@@ -21,6 +21,12 @@
               </td>
             </tr>
           </tr>
+          <tr>
+            <th>購入日時</th>
+            <td class="publish_detail_text">
+              <%= purchaseds.created_at.strftime('%Y/%m/%d %H:%m') %>
+            </td>
+          </tr>
           <!-- <tr>
             <th></th>
             <td><%#= link_to("削除", "/publishes/#{furniture.id}/destroy", {method: "post"}) %></td>
