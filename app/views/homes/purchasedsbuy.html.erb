@@ -1,0 +1,31 @@
+<section id="cart_block">
+  <h2>購入済み商品</h2>
+
+    <% @purchaseds.each do |purchaseds| %>
+      <% furniture = Furniture.find_by(id: purchaseds.furniture_id) %>
+      <table class="cart_solo_table">
+        <tbody>
+          <tr>
+            <th>商品名</th>
+            <td><%= image_tag furniture.furniture_image %>
+              <%= link_to furniture.name, furniture %></td>
+          </tr>
+          <tr>
+              <th>配送状況</th>
+              <td class="publish_detail_text">
+                <% if purchaseds.purchased_status == 'undelivered' %>
+                  未発送
+                <% else %>
+                  配送済み
+                <% end %>
+              </td>
+            </tr>
+          </tr>
+          <!-- <tr>
+            <th></th>
+            <td><%#= link_to("削除", "/publishes/#{furniture.id}/destroy", {method: "post"}) %></td>
+          </tr> -->
+        </tbody>
+      </table>
+    <% end %>
+</section>

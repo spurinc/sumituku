@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get 'homes/favorites' => 'homes#favorites'
   get 'homes/carts' => 'homes#carts'
   post 'homes/carts/pay' => 'homes#pay'
+  get 'homes/purchasedsbuy' => 'homes#purchasedsbuy'
+  get 'homes/purchasedscreator' => 'homes#purchasedscreator'
 
   # 家具のパスを設定
   resources :furnitures
@@ -41,5 +43,10 @@ Rails.application.routes.draw do
   # カート
   post "/publishes/:furniture_id/create" => "publishes#create"
   post "/publishes/:furniture_id/destroy" => "publishes#destroy"
+
+  #購入された商品
+  # post "/purchaseds/:furniture_id/create" => "purchaseds#create"
+  post "/purchaseds/:id" => "purchaseds#update"
+  post "/purchaseds/:furniture_id/destroy" => "purchaseds#destroy"  
 
 end
