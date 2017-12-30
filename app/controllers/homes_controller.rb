@@ -5,6 +5,7 @@ before_action :sign_in_required, only: [:show,:user]
   end
 
   def show
+    @purchaseds = Purchased.where(creator: current_user.id).where(purchased_status: 'undelivered')    
   end
 
   # ユーザー情報

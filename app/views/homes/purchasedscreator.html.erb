@@ -12,7 +12,7 @@
             </tr>
             <tr>
               <th>購入者</th>
-              <td class="publish_detail_text">
+              <td class="buyer_img_block">
                 <% buyer = User.find_by(id: purchaseds.user_id) %>
                 <%= image_tag buyer.prof_img %>
                 <%= buyer.username %>

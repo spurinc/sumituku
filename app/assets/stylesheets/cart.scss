@@ -39,6 +39,13 @@
 				.publish_detail_text{
 					font-size: 1em;
 				}
+				td.buyer_img_block{
+					img{
+						border-radius: 100%;
+						max-width: 55px;
+						height: 55px;
+					}
+				}
 			}
 		}
 	}
