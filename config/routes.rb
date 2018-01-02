@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   # devise gemを利用
   devise_for :users, :controllers => {
     :omniauth_callbacks => "omniauth_callbacks",
@@ -33,5 +34,11 @@ Rails.application.routes.draw do
   # お気に入り
   post "/favorites/:furniture_id/create" => "favorites#create"
   post "/favorites/:furniture_id/destroy" => "favorites#destroy"
+
+  # カテゴリー
+  get 'category' => 'category/list'
+  get 'category/list'
+  get 'category/subject'
+  get 'category/not_found'
 
 end
