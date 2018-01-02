@@ -39,6 +39,5 @@ Rails.application.routes.draw do
   get 'category' => 'category/list'
   get 'category/list'
   get 'category/subject'
-  get 'category/not_found'
 
 end
