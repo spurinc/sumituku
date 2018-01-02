@@ -11,14 +11,5 @@
 
 
 # カテゴリーの一覧と、カテゴリーから製品一覧を表示する時のデータ
-Category.create(id:'1', name:'Chair'
-	, image:'/uploads/furniture/furniture_image/1/aeronchair1.jpg'
-	, summary:'Chair_summary'
-	, descript_json:'["Chair_descript_json","descript_json"]'
-	, push_json: '[-1,-1]')
-
-Category.create(id:'2', name:'Table'
-	, image:'/uploads/furniture/furniture_image/2/testtable.jpg'
-	, summary:'Table_summary'
-	, descript_json:'["Table_descript_json","descript_json"]'
-	, push_json: '[-1,-1]')
+Category.create( {id:'1', name:'Chair'	, image:'/uploads/furniture/furniture_image/1/aeronchair1.jpg'	, summary:'Chair_summary'	, descript_json:'["Chair_descript_json","descript_json"]'	, push_json: '[-1,-1]'})
+Category.create({id:'2', name:'Table'	, image:'/uploads/furniture/furniture_image/2/testtable.jpg'	, summary:'Table_summary'	, descript_json:'["Table_descript_json","descript_json"]'	, push_json: '[-1,-1]'})

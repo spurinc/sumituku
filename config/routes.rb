@@ -36,7 +36,7 @@ Rails.application.routes.draw do
   post "/favorites/:furniture_id/destroy" => "favorites#destroy"
 
   # カテゴリー
-  get 'category' => 'category/list'
+  get 'category' => 'category#list'
   get 'category/list'
   get 'category/subject'
 
