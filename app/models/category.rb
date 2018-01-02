@@ -4,6 +4,7 @@ class Category < ApplicationRecord
 		arr = []
 		desc.each do |str|
 			arr.push str
+		end
 		return arr
 	end
 
@@ -12,6 +13,7 @@ class Category < ApplicationRecord
 		arr = []
 		push_json.each do |id|
 			arr.push id
+		end
 		return arr
 	end
 
