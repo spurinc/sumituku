@@ -1,22 +1,38 @@
 
 <%= link_to  "Category", model:'category' %> > <%= link_to  @data.name, model:'category' %> 
 
-<p class="category image"><%= image_tag @data.image %></p>
-<p class="category name"><%= @data.name %></p>
-<p class="category summary"><%= @data.summary %></p>
 
-<% @data.descriptions.each do |disc| %>
-<p class="category disc"><%= disc %></p>
-<% end %>
+<section id="category_discript">
+	<p class="category image"><%= image_tag @data.image %></p>
+	<p class="category name"><%= @data.name %></p>
+	<p class="category summary"><%= @data.summary %></p>
+
+	<% puts "\n"+ sprintf( " ============= %s(%d) =================",__FILE__.split("/").last,__LINE__) %>
+	<%  #pp user.username %>
+	<% @data.descriptions.each do |disc| %>
+		<p class="category disc"><%= disc %></p>
+	<% end %>
+</section>
 <HR>
 
 <% #TODO おすすめ商品の一覧を取得して表示できる。未実装 %>
 
-<% @items.each do |item| %>
-<p class="item name"><%= @item.name %></p>
-<p class="item image"><%= image_tag  @item.image %></p>
-<p class="item price"><%= @item.price %></p>
-<HR>
-<% end %>
-
+<section id="item_list">
+	<% @items.each do |itm| %>
+		<div class="item_data">
+			<p class="furniture image"><%= image_tag  itm.furniture_image %></p>
+			<div class="furniture_name"><%= itm.name %></div>
+			<div class="furniture_price"><%= itm.price %>円</div>
+		</div>
+		<div class="creater_data">
+			<% user = User.find_by(id: itm.user_id) %>
+			<div class="creater_name"><%= user.username %></div>
+			<% unless user.prof_img.file.nil? %>
+				<%= image_tag(user.prof_img, :class => "creater_icon") %>
+			<% end %>
+		</div>
+		<div class="float_clear"></div>
+		<hr>
+	<% end %>
+</section>
 

@@ -21,9 +21,10 @@ class CategoryController < ApplicationController
 		return
 	end
 	@data = Category.find(id.to_i)
-	puts "\n"+ sprintf( " => %s(%d)",__FILE__.split("/").last,__LINE__)
-	pp @data
 	@items = set_item_page_data @data.name, 20, params['page']
+
+	puts "\n"+ sprintf( " ============= %s(%d) =============",__FILE__.split("/").last,__LINE__)
+	# pp @items[0]
   end
 
   private
@@ -44,6 +45,9 @@ class CategoryController < ApplicationController
 
 	# データがあれば返却し、なければ空配列を返却します
 	ret =  items.limit(limit).offset(page * limit)
+
+
+
 	if ret != nil then
 		return ret
 	end

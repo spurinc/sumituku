@@ -441,5 +441,5 @@ Furniture.create(
 	)
 
 # カテゴリーの一覧と、カテゴリーから製品一覧を表示する時のデータ
-Category.create( {id:'1', name:'chair'	, image:'/uploads/furniture/furniture_image/1/aeronchair1.jpg'	, summary:'Chair_summary'	, descript_json:'["Chair_descript_json","descript_json"]'	, push_json: '[-1,-1]'})
-Category.create({id:'2', name:'table'	, image:'/uploads/furniture/furniture_image/2/testtable.jpg'	, summary:'Table_summary'	, descript_json:'["Table_descript_json","descript_json"]'	, push_json: '[-1,-1]'})
+Category.create({ name:'table'	, image:'/uploads/furniture/furniture_image/2/testtable.jpg'	, summary:'table_summary'	, descript_json:'["table_descript_json","descript_json"]'	, push_json: '[-1,-1]'})
+Category.create({ name:'chair'	, image:'/uploads/furniture/furniture_image/1/aeronchair1.jpg'	, summary:'chair_summary'	, descript_json:'["chair_descript_json","descript_json"]'	, push_json: '[-1,-1]'})
