@@ -39,4 +39,9 @@ Rails.application.routes.draw do
   get 'service_about' => 'service_about#main'
   get 'service_about/main'
 
+  # カテゴリー
+  get 'category' => 'category#list'
+  get 'category/list'
+  get 'category/subject'
+
 end

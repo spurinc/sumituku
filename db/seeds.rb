@@ -439,3 +439,7 @@ Furniture.create(
 ・送料は、全国一律3,000円ですが、一部の地域（北海道、沖縄県又は離島）は別途お見積りが必要です。',
 	user_id: 2
 	)
+
+# カテゴリーの一覧と、カテゴリーから製品一覧を表示する時のデータ
+Category.create( {id:'1', name:'chair'	, image:'/uploads/furniture/furniture_image/1/aeronchair1.jpg'	, summary:'Chair_summary'	, descript_json:'["Chair_descript_json","descript_json"]'	, push_json: '[-1,-1]'})
+Category.create({id:'2', name:'table'	, image:'/uploads/furniture/furniture_image/2/testtable.jpg'	, summary:'Table_summary'	, descript_json:'["Table_descript_json","descript_json"]'	, push_json: '[-1,-1]'})
