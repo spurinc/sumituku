@@ -12,20 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20171230045234) do
 
-  create_table "cart_items", force: :cascade do |t|
-    t.integer "furniture_id"
-    t.integer "cart_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
-    t.index ["furniture_id"], name: "index_cart_items_on_furniture_id"
-  end
-
-  create_table "carts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "furniture_id"
