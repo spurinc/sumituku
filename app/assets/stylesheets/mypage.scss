@@ -49,7 +49,12 @@
 	.logout_block{
 		padding: 0.9em;
 	}
-
+	.purchaseds_count{
+		background-color: $accent_color;
+		color: $white;
+		padding: 0.2em 0.4em;
+		border-radius:100%;
+	}
 }
 
 

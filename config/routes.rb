@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'publishes/show'
+
   # devise gemを利用
   devise_for :users, :controllers => {
     :omniauth_callbacks => "omniauth_callbacks",
@@ -13,13 +15,17 @@ Rails.application.routes.draw do
   get 'homes/show'
   get 'homes/myproduct'
   get 'homes/favorites' => 'homes#favorites'
+  get 'homes/carts' => 'homes#carts'
+  post 'homes/carts/pay' => 'homes#pay'
+  get 'homes/purchasedsbuy' => 'homes#purchasedsbuy'
+  get 'homes/purchasedscreator' => 'homes#purchasedscreator'
 
   # 家具のパスを設定
   resources :furnitures
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # topページを設定
-  root 'products#index'
+  root 'furnitures#index'
   # root to: 'furnitures#index'
   # さえきけしました
 
@@ -33,5 +39,14 @@ Rails.application.routes.draw do
   # お気に入り
   post "/favorites/:furniture_id/create" => "favorites#create"
   post "/favorites/:furniture_id/destroy" => "favorites#destroy"
+
+  # カート
+  post "/publishes/:furniture_id/create" => "publishes#create"
+  post "/publishes/:furniture_id/destroy" => "publishes#destroy"
+
+  #購入された商品
+  # post "/purchaseds/:furniture_id/create" => "purchaseds#create"
+  post "/purchaseds/:id" => "purchaseds#update"
+  post "/purchaseds/:furniture_id/destroy" => "purchaseds#destroy"  
 
 end

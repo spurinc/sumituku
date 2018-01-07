@@ -1,0 +1,57 @@
+<section id="cart_block">
+  <h2>購入された商品</h2>
+
+    <% @purchaseds.each do |purchaseds| %>
+      <% furniture = Furniture.find_by(id: purchaseds.furniture_id) %>
+        <table class="cart_solo_table">
+          <tbody>
+            <tr>
+              <th>商品名</th>
+              <td><%= image_tag furniture.furniture_image %>
+                <%= link_to furniture.name, furniture %></td>
+            </tr>
+            <tr>
+              <th>購入者</th>
+              <td class="buyer_img_block">
+                <% buyer = User.find_by(id: purchaseds.user_id) %>
+                <%= image_tag buyer.prof_img %>
+                <%= buyer.username %>
+              </td>
+            </tr>
+            <tr>
+              <th>配送状況</th>
+              <td class="publish_detail_text">
+                <% if purchaseds.purchased_status == 'undelivered' %>
+                  未発送
+                <% else %>
+                  配送済み
+                <% end %>
+              </td>
+            </tr>
+            <tr>
+              <th>購入日時</th>
+              <td class="publish_detail_text">
+                <%= purchaseds.created_at.strftime('%Y/%m/%d %H:%m') %>
+              </td>
+            </tr>
+            <tr>
+              <th>配送状況を更新する</th>
+              <td class="publish_detail_text">
+                <%= form_tag("/purchaseds/#{purchaseds.id}") do %>
+                  <% if purchaseds.purchased_status == 'undelivered' %>
+                    <%= select :purchased,:purchased_status, [["未配送", 'undelivered'], ["配送済み", "shipped"]],class: 'form-control' %>
+                  <% else %>
+                    <%= select :purchased,:purchased_status, [["配送済み", "shipped"],["未配送", 'undelivered']],class: 'form-control' %>
+                  <% end %>
+                  <%= submit_tag "更新する",:class=>"btn btn-primary"%>
+                <% end %>
+              </td>
+            </tr>
+            <!-- <tr>
+              <th></th>
+              <td><%#= link_to("削除", "/publishes/#{furniture.id}/destroy", {method: "post"}) %></td>
+            </tr> -->
+          </tbody>
+        </table>
+    <% end %>
+</section>
