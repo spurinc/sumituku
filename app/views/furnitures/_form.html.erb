@@ -63,6 +63,8 @@
     <%= form.label :delivery,"配送方法" %>
     <%= form.text_area :delivery, id: :delivery,:rows=>"5", :class => "form-control" %>
   </div>
+
+  <%= form.hidden_field :Deliverystatus, :value => 'unpurchased' %>
   
   <!-- 登録した家具をユーザーを紐付け -->
   <%= form.hidden_field :user_id, :value => current_user.id %>

@@ -76,7 +76,6 @@ class FurnituresController < ApplicationController
   end
 
 
-
   private
     # Use callbacks to share common setup or constraints between actions.
     # 家具情報を@furnitureに挿入
@@ -87,6 +86,6 @@ class FurnituresController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     # 家具情報で挿入されるカラム
     def furniture_params
-      params.require(:furniture).permit(:name, :category, :furniture_image,:furniture_about,:price,:kodawari_img,:kodawari_point,:kodawari_about,:size,:delivery,:user_id)
+      params.require(:furniture).permit(:name, :category, :furniture_image,:furniture_about,:price,:kodawari_img,:kodawari_point,:kodawari_about,:size,:delivery,:user_id,:Deliverystatus)
     end
 end
