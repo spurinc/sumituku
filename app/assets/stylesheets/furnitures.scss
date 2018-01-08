@@ -9,37 +9,38 @@
 
 // 共通部分
 body{
- 	background-color: $bg_color;
+  background-color: $bg_color;
 }
+
 
 // header
 .category_title{
-	 .fa-user-circle{
-	 	font-size: 1.5em;
-	 }
+  .fa-user-circle{
+    font-size: 1.5em;
+  }
 }
 .fa-search {
-	color: $gray;
+  color: $gray;
 }
 
 nav{
-	background-color: $white;
-    height:30px;
-    margin-top:0.5em;
-    margin-bottom:2em;
-    padding-right:10px;
-    padding-left:10px;
-	h1.logo{
-		font-size: 1em;
-		font-weight: 300;
-		display: inline;
-		line-height: 1.5em;
-        width:50px;
-        float:left;
-		a {
-			color: $gray;
-		}
-	}
+  background-color: $white;
+  height:30px;
+  margin-top:0.5em;
+  margin-bottom:2em;
+  padding-right:10px;
+  padding-left:10px;
+  h1.logo{
+    font-size: 1em;
+    font-weight: 300;
+    display: inline;
+    line-height: 1.5em;
+    width:50px;
+    float:left;
+    a {
+      color: $gray;
+    }
+  }
   button{
     background-color:white;
     border-radius: 10px;
@@ -80,231 +81,231 @@ nav{
 }
 
 .furniture_block{
-	margin-bottom: 1em;
-	border-bottom: 1px solid $base_text;
-	.furniture_img_block{
-		img{
-			max-width: 100%;
-		}
-	}
+  margin-bottom: 1em;
+  border-bottom: 1px solid $base_text;
+  .furniture_img_block{
+    img{
+      max-width: 100%;
+    }
+  }
 }
 
 .furniture_container{
-	border-bottom: 1px solid $gray;
+  border-bottom: 1px solid $gray;
 }
 
 
 // footer
 footer{
-	background-color: $white;
-	margin-top: 1em;
-	.company_info{
-        margin-left:10px;
-		padding:0.5em;
-		h3,h4,p{
-			margin: 0.4em 0;
-		}
-		h3,h4{
-			font-size: 1.2em;
-            color:#BBBDBE;
-		}
-        a{
-          line-height:1.2em;
-          color:#BBBDBE;
-        }
-        i.fa{
-          margin-top:10px;
-          color:#BBBDBE;
-          font-size:1.4em;
-          margin-right:0.5em;
-        }
-	}
+  background-color: $white;
+  margin-top: 1em;
+  .company_info{
+    margin-left:10px;
+    padding:0.5em;
+    h3,h4,p{
+      margin: 0.4em 0;
+    }
+    h3,h4{
+      font-size: 1.2em;
+      color:#BBBDBE;
+    }
+    a{
+      line-height:1.2em;
+      color:#BBBDBE;
+    }
+    i.fa{
+      margin-top:10px;
+      color:#BBBDBE;
+      font-size:1.4em;
+      margin-right:0.5em;
+    }
+  }
 }
+
 
 
 
 // furnitures/show.html.erb
 #furniture_detail_top{
-	.furniture_top_img{
-		padding: 10px;
-		img{
-			width: 100%;
-		}
-	}
-	.furniture_about_text{
-		margin: 0 10px;
-		h3 {
-			color: $base_text;
-			margin: 20px 0;
-		}
-		.furniture_description{
-			color: $base_text;
-			line-height: 1.5;
-			margin-bottom: 20px;
-		}
-		.furniture_price{
-			padding-bottom: 10px;
-			color: $base_text;
-			font-size: 1.2em;
-		}
-	}
-	.good_icon{
-		font-size: 1em;
-		i{
-			color: $accent_color;
-		}
-	}
+  .furniture_top_img{
+    padding: 10px;
+    img{
+      width: 100%;
+    }
+  }
+  .furniture_about_text{
+    margin: 0 10px;
+    h3 {
+      color: $base_text;
+      margin: 20px 0;
+    }
+    .furniture_description{
+      color: $base_text;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .furniture_price{
+      padding-bottom: 10px;
+      color: $base_text;
+      font-size: 1.2em;
+    }
+  }
+  .good_icon{
+    font-size: 1em;
+    i{
+      color: $accent_color;
+    }
+  }
 }
 #kodawari{
-	.kodawari_img{
-		padding: 10px;
-		img{
-			width: 100%;
-		}
-	}
-	.kodawari_text{
-		margin: 0 10px;
-		h3 {
-			color: $base_text;
-			margin: 20px 0;
-		}
-		.kodawari_description{
-			color: $base_text;
-			line-height: 1.5;
-			margin-bottom: 20px;
-		}
-	}
+  .kodawari_img{
+    padding: 10px;
+    img{
+      width: 100%;
+    }
+  }
+  .kodawari_text{
+    margin: 0 10px;
+    h3 {
+      color: $base_text;
+      margin: 20px 0;
+    }
+    .kodawari_description{
+      color: $base_text;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+  }
 }
 
 // 購入CTA
 .purchase_block{
-	background-color: $accent_color;
-	color: $white;
-	padding: 20px 20px;
-	line-height: 1.5em;
-	margin: 30px 10px;
+  background-color: $accent_color;
+  color: $white;
+  padding: 20px 20px;
+  line-height: 1.5em;
+  margin: 30px 10px;
 }
 
 .fa-shopping-cart{
-	margin-right: 10px;
+  margin-right: 10px;
 }
-
 
 // furnitures/index.html.erb
 #recently_popular{
-	margin-bottom: 2.5em;
-	h2{
-		font-size: 1.3em;
-		color: $base_text;
-		margin: 1em 0.2em 0.5em;
-        font-weight:bold;
-	}
-	.recently_popular_blocks{
-		list-style: none;
-		padding: 0;
-		white-space:nowrap;
-		overflow: scroll;
-		li.product_block{
-			height: 210px;
-			width: 170px;
-            box-shadow:0 0 8px gray;
-			background-color: $white;
-			border:1px solid $gray;
-			margin: 0 1em;
-			display: inline-block;
-			.furniture_img{
-				height: 150px;
-				img{
-					width: 100%;
-					height: 150px;
-				}
-			}
-			.product_text{
-				margin: 0.5em;
-				img{
-					width: 2.6em;
-					height: 2.6em;
-					border-radius: 50%;
-				}
-                p{
-                  margin-bottom:0;
-                  a{
-                    color:black;
-                    font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
-                    font-weight:bold;
-                    font-size:1.1em;
-                  }
-                }
-				.product_kodawari_block{
-					h4{
-						margin-bottom: 0.1em;
-						font-size: 1.3em;
-					}
-					p{
-                      word-break: break-all;
-                      font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
-                      white-space: normal;
-                      color: black;
-                      margin-top: 0;
-                      font-size: 1em;
-                      margin-left: 3em;
-					}
-				}
-			}
+  margin-bottom: 2.5em;
+  h2{
+    font-size: 1.3em;
+    color: $base_text;
+    margin: 1em 0.2em 0.5em;
+    font-weight:bold;
+  }
+  .recently_popular_blocks{
+    list-style: none;
+    padding: 0;
+    white-space:nowrap;
+    overflow: scroll;
+    li.product_block{
+      height: 210px;
+      width: 170px;
+      box-shadow:0 0 8px gray;
+      background-color: $white;
+      border:1px solid $gray;
+      margin: 0 1em;
+      display: inline-block;
+      .furniture_img{
+        height: 150px;
+        img{
+          width: 100%;
+          height: 150px;
+        }
+      }
+      .product_text{
+        margin: 0.5em;
+        img{
+          width: 2.6em;
+          height: 2.6em;
+          border-radius: 50%;
+        }
+        p{
+          margin-bottom:0;
+          a{
+            color:black;
+            font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+            font-weight:bold;
+            font-size:1.1em;
+          }
+        }
+        .product_kodawari_block{
+          h4{
+            margin-bottom: 0.1em;
+            font-size: 1.3em;
+          }
+          p{
+            word-break: break-all;
+            font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+            white-space: normal;
+            color: black;
+            margin-top: 0;
+            font-size: 1em;
+            margin-left: 3em;
+          }
+        }
+      }
 
-		}
-	}
+    }
+  }
 }
 
 
 #category_popular{
-   margin-bottom: 2.5em;
-   h2{
-     font-size: 1.3em;
-     color: $base_text;
-     margin: 1em 0.2em 0.5em;
-     font-weight:bold;
-   }
-   .recently_popular_blocks{
-     list-style: none;
-     padding: 0;
-     white-space:nowrap;
-     overflow: scroll;
-     li.category_block{
-       height: 100px;
-       width: 130px;
-       box-shadow:0 0 8px gray;
-       background-color: $white;
-       border:1px solid $gray;
-       margin: 0 1em;
-       display: inline-block;
-       .furniture_img{
-         height: 150px;
-         img{
-           width: 100%;
-           height: 70px;
-         }
-       }
-       .product_text{
-         margin: 0.5em;
-         img{
-           width: 2.6em;
-           height: 2.6em;
-           border-radius: 50%;
-         }
-         .product_category{
-           h4{
-             margin-bottom: 0.1em;
-             font-size: 1.2em;
-             font-weight:bold;
-             font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
-           }
-         }
-       }
+  margin-bottom: 2.5em;
+  h2{
+    font-size: 1.3em;
+    color: $base_text;
+    margin: 1em 0.2em 0.5em;
+    font-weight:bold;
+  }
+  .recently_popular_blocks{
+    list-style: none;
+    padding: 0;
+    white-space:nowrap;
+    overflow: scroll;
+    li.category_block{
+      height: 100px;
+      width: 130px;
+      box-shadow:0 0 8px gray;
+      background-color: $white;
+      border:1px solid $gray;
+      margin: 0 1em;
+      display: inline-block;
+      .furniture_img{
+        height: 150px;
+        img{
+          width: 100%;
+          height: 70px;
+        }
+      }
+      .product_text{
+        margin: 0.5em;
+        img{
+          width: 2.6em;
+          height: 2.6em;
+          border-radius: 50%;
+        }
+        .product_category{
+          h4{
+            margin-bottom: 0.1em;
+            font-size: 1.2em;
+            font-weight:bold;
+            font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+          }
+        }
+      }
 
-     }
-   }
- }
+    }
+  }
+}
 
 
 #sale_block{
@@ -340,89 +341,113 @@ footer{
     color: $base_text;
     margin: 1em 0.2em 0.5em;
     font-weight:bold;
-    }
   }
-  .recommend_list{
-    margin-top:15px;
-    a{
+}
+.recommend_list{
+  margin-top:15px;
+  a{
     font-size:1em;
     float:right;
     color:black;
-    }
-   }
+  }
+}
 
 
-  .recently_article_blocks{
-    padding: 0;
-    white-space:nowrap;
-      .article_block{
-      height: 250px;
-      width: 100%;
-      box-shadow:0 0 8px gray;
-      background-color: $white;
-      border:1px solid $gray;
-      margin: 0;
-      display: inline-block;
-      .article_img{
-        img{
-          width:100%;
-        }
+.recently_article_blocks{
+  padding: 0;
+  white-space:nowrap;
+  .article_block{
+    height: 300px;
+    width: 100%;
+    box-shadow:0 0 8px gray;
+    background-color: $white;
+    border:1px solid $gray;
+    margin: 0;
+    display: inline-block;
+    .article_img{
+      img{
+        width:100%;
       }
-      .article_text{
-        margin: 0.5em;
-        word-wrap: break-word;
-        white-space:normal;
-        img{
-          width: 2.6em;
-          height: 2.6em;
-          border-radius: 50%;
-        }
-        a{
-          margin-bottom: 0.1em;
-          font-size: 1.2em;
-          font-weight:bold;
-          color:black;
-          font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
-        }
+    }
+    .article_text{
+      margin: 0.5em;
+      word-wrap: break-word;
+      white-space:normal;
+      a{
+        margin-bottom: 0.1em;
+        font-size: 1.2em;
+        font-weight:bold;
+        color:black;
+        font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+      }
+    }
+    .article_writer{
+      img{
+        width: 2.6em;
+        height: 2.6em;
+        border-radius: 50%;
+        float:left;
+        margin:0;
+        display:inline-block;
+      }
+      a{
+        vertical-align:-webkit-baseline-middle;
+        color:$base_text;
       }
     }
   }
+}
 
 #sumituku_block{
-	margin-top: 5em;
-    padding-right:10px;
-    padding-left:10px;
-	.crator_img_block{
-		width: 98%;
-		margin: 0 auto;
-		img{
-			text-align: center;
-			width: 100%;
-		}		
-	}
-	h2{
-		text-align: center;
-		font-weight: bold;
-        font-size:1.3em;
-	}
-    p{
+  margin-top: 5em;
+  padding-right:10px;
+  padding-left:10px;
+  .crator_img_block{
+    width: 98%;
+    margin: 0 auto;
+    img{
       text-align: center;
-      line-height: 1.8em;
-      font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+      width: 100%;
     }
+  }
+  h2{
+    text-align: center;
+    font-weight: bold;
+    font-size:1.3em;
+  }
+  p{
+    text-align: center;
+    line-height: 1.8em;
+    font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+  }
 }
+
 
 
 // furniture/new.html.erb
 #furniture_registant{
-	width: 95%;
-	margin: 1em auto;
-	h1{
-		margin-top: 0.5em;
-	}
+  width: 95%;
+  margin: 1em auto;
+  h1{
+    margin-top: 0.5em;
+  }
 }
 
 
+.creater_img_block{
+  margin-top:4em;
+  margin-bottom:4em;
+  h2{
+    text-align: center;
+    font-size:1.5em;
+  }
+  p{
+    text-align: center;
+  }
+  img{
+    width:100%;
+  }
+}
 
 
 
@@ -430,24 +455,24 @@ footer{
 
 
 @media screen and (min-width: 641px){
-	.furniture_container{
-		width: 70%;
-		margin: 0 auto;
-		#sumituku_block{
-			.crator_img_block{
-				width: 50%;
-				margin: 0 auto;
-			}
-		}
-	}
-	#furniture_detail_top,#kodawari,#delivery_size{
-		width: 65%;
-		margin: 0 auto;
-		.furniture_top_img,.kodawari_img{
-			width: 50%;
-			margin: 0 auto;
-		}
-	}
+  .furniture_container{
+    width: 70%;
+    margin: 0 auto;
+    #sumituku_block{
+      .creater_img_block{
+        width: 50%;
+        margin: 0 auto;
+      }
+    }
+  }
+  #furniture_detail_top,#kodawari,#delivery_size{
+    width: 65%;
+    margin: 0 auto;
+    .furniture_top_img,.kodawari_img{
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
 }
 
 

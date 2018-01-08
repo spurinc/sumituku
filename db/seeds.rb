@@ -9,24 +9,6 @@
 
 # Funniture.create(id: "1",name: "テストイス",category: "chair",furniture_image: "aeronchair1.jpg",price: 7980,furniture_about: "")
 
-
-<<<<<<< HEAD
-10.times do |i|
-  Furniture.create!(
-    name: "#{i+1}個目のtest",
-    category: 2,
-    furniture_image: open("app/assets/images/creator.jpg"),
-    price: 1000,
-    furniture_about: "this form was made as the test",
-    kodawari_img: nil,
-    kodawari_point: nil,
-    kodawari_about: nil,
-    size: nil,
-    delivery: nil,
-    user_id: 1
-  )
-end
-=======
 User.create(
 	email: 'test@gmail.com',
 	password: 'hogehoge',
@@ -460,4 +442,3 @@ Furniture.create(
 # カテゴリーの一覧と、カテゴリーから製品一覧を表示する時のデータ
 Category.create({ name:'table'	, image:'/uploads/furniture/furniture_image/2/testtable.jpg'	, summary:'table_summary'	, descript_json:'["table_descript_json","descript_json"]'	, push_json: '[-1,-1]'})
 Category.create({ name:'chair'	, image:'/uploads/furniture/furniture_image/1/aeronchair1.jpg'	, summary:'chair_summary'	, descript_json:'["chair_descript_json","descript_json"]'	, push_json: '[-1,-1]'})
->>>>>>> a6b65b2e4d9c1a761871a85b708a4ebb09e2f50c
