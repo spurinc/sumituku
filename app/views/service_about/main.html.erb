@@ -1,0 +1,72 @@
+<div id="title">
+</div>
+<div id="picture">
+</div>
+<hr>
+<div class='kagu' >
+	<p class='sub_title'>一緒に暮らす家具</p>
+	<p class='sub_discript'>安らぐ時間を一緒に過ごす。</p>
+	<p class='sub_discript'>誰よりも長く触れ合う。</p>
+	<p class='sub_discript'>だから、こだわる。</p>
+	<img class='sub_picture' src='../images/kagu_img.jpeg'/>
+</div>
+<hr>
+
+<div class='creater' >
+	<p class='sub_title'>作り手の思いを受け止めて</p>
+	<p class='sub_discript'>「どんな毎日が理想ですか？」</p>
+	<p class='sub_discript'>家具を通じてあなたを支えてくれる職人。</p>
+	<p class='sub_discript'>彼らの想いに触れたら、</p>
+	<p class='sub_discript'>家にいる時間がもっと好きになった。</p>
+	<img class='sub_picture' src='../images/craftman_image.jpg'/>
+</div>
+
+<hr>
+<div class='creater' >
+	<p class='sub_title'>Patronというサービス</p>
+	<p class='sub_discript'>素敵な物を生み出してくれる人たちに、</p>
+	<p class='sub_discript'>「ありがとう」を届けたい。</p>
+	<p class='sub_discript'>そんな重いからできたのが、このサイト。</p>
+	<img class='sub_picture' src='../images/logp.png'/>
+</div>
+
+<hr>
+<script src="https://cdn.jsdelivr.net/npm/vue">
+</script>
+<script>
+	if (String.prototype.format == undefined) {
+		String.prototype.format = function (arg) {
+			var args = arguments;
+			var rep_fn_1 = function (m, k) {
+				return arg[k];
+			};
+			var rep_fn_some = function (m, k) {
+				return args[parseInt(k)];
+			};
+			return this.replace(/\{(\w+)\}/g, (typeof arg == "object" ? rep_fn_1 : rep_fn_some));
+		}
+	}
+
+	var componentTitle = new Vue({
+		template: "<ServiceTitle str='About the Patron'></ServiceTitle>",
+		components: {
+			ServiceTitle: Vue.extend({
+				props: ['str'],
+				template: '<p class="ServiceTitle">{{ str }}</p>'
+			})
+		}
+	})
+	componentTitle.$mount('#title')
+
+
+	var componentRoot = new Vue({
+		template: '<singlePicture src="../images/patron_image.png" class="patron_image"> </singlePicture>',
+		components: {
+			singlePicture: Vue.extend({
+				props: {},
+				template: '<img alt="img"> </img>'
+			})
+		}
+	})
+	componentRoot.$mount('#picture')
+</script>

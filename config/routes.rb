@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'publishes/show'
-
   # devise gemを利用
   devise_for :users, :controllers => {
     :omniauth_callbacks => "omniauth_callbacks",
@@ -40,6 +38,7 @@ Rails.application.routes.draw do
   post "/favorites/:furniture_id/create" => "favorites#create"
   post "/favorites/:furniture_id/destroy" => "favorites#destroy"
 
+
   # カート
   post "/publishes/:furniture_id/create" => "publishes#create"
   post "/publishes/:furniture_id/destroy" => "publishes#destroy"
@@ -48,5 +47,15 @@ Rails.application.routes.draw do
   # post "/purchaseds/:furniture_id/create" => "purchaseds#create"
   post "/purchaseds/:id" => "purchaseds#update"
   post "/purchaseds/:furniture_id/destroy" => "purchaseds#destroy"  
+
+  # サービスアバウト
+  get 'service_about' => 'service_about#main'
+  get 'service_about/main'
+
+  # カテゴリー
+  get 'category' => 'category#list'
+  get 'category/list'
+  get 'category/subject'
+
 
 end

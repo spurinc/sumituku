@@ -32,8 +32,13 @@
           <% else %>
             <%= link_to '登録', new_user_registration_path, class: 'category_title' %>
           <% end %>
-        <% else %>
-            <a class="category_title" href="#"><%= @furniture.category %></a>
+		<% else %>
+			<% category = Category.where("name like ?", @furniture.category )[0]  # table %>
+			<% pp "category================" %>
+			<% pp category %>
+			<% pp "category.id================" %>
+			<% pp category.id %>
+            <var class="category_title" ><%= link_to @furniture.category, :controller=>'category', :action=>'subject' , :id=>category.id %></a>
         <% end %>
 
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,7 +73,7 @@
         <!-- <h3>ロゴ</h3> -->
         <h4>株式会社SPUR</h4>
         <p><a href="#">会社概要</a></p>
-        <p><a href="#">アバウト</a></p>
+        <p><%= link_to 'アバウト', :controller=>'service_about', :action=>'main' %></p>
       </div>
     </footer>
 
