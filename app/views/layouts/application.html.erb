@@ -25,10 +25,42 @@
             <%= button_tag :type => "submit",:style=>"border:none;" do %>
                 <i class="fa fa-search"></i>
             <% end %>
+<<<<<<< HEAD
             <%= text_field_tag :search, params[:search], placeholder: "ソファなどのキーワードを検索",class: 'form-design',:style=>"border:none;" %>
           </div>
       <% end %>
     </nav>
+=======
+          <% else %>
+            <%= link_to '登録', new_user_registration_path, class: 'category_title' %>
+          <% end %>
+		<% else %>
+			<% category = Category.where("name like ?", @furniture.category )[0]  # table %>
+			<% pp "category================" %>
+			<% pp category %>
+			<% pp "category.id================" %>
+			<% pp category.id %>
+            <var class="category_title" ><%= link_to @furniture.category, :controller=>'category', :action=>'subject' , :id=>category.id %></a>
+        <% end %>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+
+        <div class="collapse navbar-collapse search_block" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+          </ul>
+          <%= form_tag furnitures_path, :method => 'get' do %>
+            <div class="input-group">
+              <%= text_field_tag :search, params[:search], class: 'form-control font-awesome', placeholder: "\uF002",id: "inlineFormInputGroup" %>
+              <%= submit_tag "検索",class: 'input-group-addon search_button' %>
+            </div>
+          <% end %>
+        </div>
+
+      </nav>
+    </div>
+>>>>>>> a6b65b2e4d9c1a761871a85b708a4ebb09e2f50c
 
     <% if notice != nil %>
       <p id="notice"><%= notice %></p>
@@ -42,6 +74,7 @@
     <footer>
       <div class="company_info">
         <!-- <h3>ロゴ</h3> -->
+<<<<<<< HEAD
         <h4>SPUR,Inc</h4>
         <p><a href="#">利用規約</a></p>
         <p><a href="#">プライバシーポリシー</a></p>
@@ -49,6 +82,11 @@
         <i class="fa fa-twitter"></i>
         <i class="fa fa-facebook"></i>
         <i class="fa fa-instagram"></i>
+=======
+        <h4>株式会社SPUR</h4>
+        <p><a href="#">会社概要</a></p>
+        <p><%= link_to 'アバウト', :controller=>'service_about', :action=>'main' %></p>
+>>>>>>> a6b65b2e4d9c1a761871a85b708a4ebb09e2f50c
       </div>
     </footer>
 
