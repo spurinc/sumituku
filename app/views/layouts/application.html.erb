@@ -1,87 +1,89 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sumituku</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
+<head>
+  <title>Sumituku</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
-  </head>
+  <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+</head>
 
-  <body>
-    <div class="navbar-container">
-      <nav class="navbar navbar-toggleable-md navbar-light">
-
-        <h1 class="logo">
-          <%= link_to 'SUMITUKU', furnitures_path %>
-        </h1>
-
-        <% if @furniture == nil || current_page?(new_furniture_path) %>
-          <% if user_signed_in? %>
-            <%= link_to homes_show_path,  class: "category_title" do %>
-              <i class="fa fa-user-circle" aria-hidden="true"></i>
-            <% end %>
-          <% else %>
-            <%= link_to '登録', new_user_registration_path, class: 'category_title' %>
-          <% end %>
-		<% else %>
-			<% category = Category.where("name like ?", @furniture.category )[0]  # table %>
-			<% pp "category================" %>
-			<% pp category %>
-			<% pp "category.id================" %>
-			<% pp category.id %>
-            <var class="category_title" ><%= link_to @furniture.category, :controller=>'category', :action=>'subject' , :id=>category.id %></a>
+<body>
+<nav class="form">
+  <h1 class="logo">
+    <%= link_to "ロゴ",furnitures_path%></h1>
+  <%= form_tag furnitures_path, :method => 'get' do %>
+      <div class="input-group">
+        <%= button_tag :type => "submit",:style=>"border:none;" do %>
+            <i class="fa fa-search"></i>
         <% end %>
-
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </button>
-
-        <div class="collapse navbar-collapse search_block" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-          </ul>
-          <%= form_tag furnitures_path, :method => 'get' do %>
-            <div class="input-group">
-              <%= text_field_tag :search, params[:search], class: 'form-control font-awesome', placeholder: "\uF002",id: "inlineFormInputGroup" %>
-              <%= submit_tag "検索",class: 'input-group-addon search_button' %>
-            </div>
-          <% end %>
-        </div>
-
-      </nav>
-    </div>
-
-    <% if notice != nil %>
-      <p id="notice"><%= notice %></p>
-    <% end %>
-
-    <% if alert != nil %>
-      <p id="alert"><%= alert %></p>
-    <% end %>
-
-    <%= yield %>
-    <footer>
-      <div class="company_info">
-        <!-- <h3>ロゴ</h3> -->
-        <h4>株式会社SPUR</h4>
-        <p><a href="#">会社概要</a></p>
-        <p><%= link_to 'アバウト', :controller=>'service_about', :action=>'main' %></p>
+        <%= text_field_tag :search, params[:search], placeholder: "ソファなどのキーワードを検索",class: 'form-design',:style=>"border:none;" %>
       </div>
-    </footer>
+  <% end %>
+</nav>
 
-    <script type="text/javascript">
+
+
+<div class="navbar-container">
+  <nav class="navbar navbar-toggleable-md navbar-light">
+
+
+    <% if @furniture == nil || current_page?(new_furniture_path) %>
+        <% if user_signed_in? %>
+            <%= link_to homes_show_path,  class: "category_title" do %>
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
+            <% end %>
+        <% end %>
+    <% else %>
+        <% category = Category.where("name like ?", @furniture.category )[0]  # table %>
+        <% pp "category================" %>
+        <% pp category %>
+        <% pp "category.id================" %>
+        <% pp category.id %>
+        <var class="category_title" ><%= link_to @furniture.category, :controller=>'category', :action=>'subject' , :id=>category.id %></var>
+    <% end %>
+  </nav>
+</div>
+
+<% if notice != nil %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+
+<% if alert != nil %>
+    <p id="alert"><%= alert %></p>
+<% end %>
+
+<%= yield %>
+<footer>
+  <div class="company_info">
+    <!-- <h3>ロゴ</h3> -->
+    <h4>SPUR,Inc</h4>
+    <p><a href="#">利用規約</a></p>
+    <p><a href="#">プライバシーポリシー</a></p>
+    <p><a href="#">サイトマップ</a></p>
+    <i class="fa fa-twitter"></i>
+    <i class="fa fa-facebook"></i>
+    <i class="fa fa-instagram"></i>
+
+    <h4>株式会社SPUR</h4>
+    <p><a href="#">会社概要</a></p>
+    <p><%= link_to 'アバウト', :controller=>'service_about', :action=>'main' %></p>
+  </div>
+</footer>
+
+<script type="text/javascript">
     $("#autoinput").click(function() {
-      AjaxZip3.zip2addr('user[postnum]', '', 'user[pref]', 'user[city]', 'user[addr]');
+        AjaxZip3.zip2addr('user[postnum]', '', 'user[pref]', 'user[city]', 'user[addr]');
     });
-  </script>
+</script>
 
-  </body>
+</body>
 </html>

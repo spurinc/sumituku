@@ -9,256 +9,445 @@
 
 // 共通部分
 body{
- 	background-color: $bg_color;
+  background-color: $bg_color;
 }
+
 
 // header
-.navbar-container {
-	border: 1.2px solid $gray;
-	padding: 12px 5px;
-}
-
 .category_title{
-	 .fa-user-circle{
-	 	font-size: 1.5em;
-	 }
+  .fa-user-circle{
+    font-size: 1.5em;
+  }
 }
 .fa-search {
-	color: $gray;
+  color: $gray;
 }
 
 nav{
-	background-color: $white;
-	line-height: 1.5em;
-	font-size: 1.3em;
-	position: relative;
-	h1.logo{
-		text-align: center;
-		position: absolute;
-		right: 0;
-		left: 0;
-		font-size: 1em;
-		font-weight: 300;
-		display: inline;
-		line-height: 1.5em;
-		width: 30%;
-		margin: 0 auto;
-		a {
-			color: $gray;
-		}
-	}
-	.navbar-toggler{
-		border: none;
-	}
-	.navbar-brand{
-		text-align: center;
-	}
-	.search_block{
-		margin: 0.5em auto 0;
-		font-size: 1em;
-		line-height: 0.8em;
-		width: 100%;
-	}
-	.category_title{
-		color: $gray !important;
-		font-weight: 300;
-		width: 20%;
-	}
-	// placeholderにfontawesome
-	input.font-awesome#inlineFormInputGroup{
-	    font-family: FontAwesome;
-	    font-style: normal;
-	    font-weight: normal;
-	    font-size: 1em;
-	    text-decoration: inherit;
-	    -webkit-font-smoothing: antialiased;
-	    -moz-osx-font-smoothing: grayscale;
-	}
+  background-color: $white;
+  height:30px;
+  margin-top:0.5em;
+  margin-bottom:2em;
+  padding-right:10px;
+  padding-left:10px;
+  h1.logo{
+    font-size: 1em;
+    font-weight: 300;
+    display: inline;
+    line-height: 1.5em;
+    width:50px;
+    float:left;
+    a {
+      color: $gray;
+    }
+  }
+  button{
+    background-color:white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    height:30px;
+    margin-top:5px;
+  }
+  .input-group{
+    width:240px;
+    height:40px;
+    border:0.5px solid $gray;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    input#search{
+      font-size:1em;
+      width:80%;
+      height:35px;
+    }
+    input#search::-webkit-input-placeholder{
+      font-size:0.8em;
+      word-wrap: break-word;
+      white-space:normal;
+    }
+    input#search:-ms-input-placeholder{
+      font-size:0.8em;
+      word-wrap: break-word;
+      white-space:normal;
+    }
+    input#search::-moz-placeholder{
+      font-size:0.8em;
+      word-wrap: break-word;
+      white-space:normal;
+    }
+  }
+
 }
 
 .furniture_block{
-	margin-bottom: 1em;
-	border-bottom: 1px solid $base_text;
-	.furniture_img_block{
-		img{
-			max-width: 100%;
-		}
-	}
+  margin-bottom: 1em;
+  border-bottom: 1px solid $base_text;
+  .furniture_img_block{
+    img{
+      max-width: 100%;
+    }
+  }
 }
 
 .furniture_container{
-	border-bottom: 1px solid $gray;
+  border-bottom: 1px solid $gray;
 }
 
 
 // footer
 footer{
-	background-color: $bg_color;
-	margin-top: 1em;
-	.company_info{
-		padding:0.5em;
-		h3,h4,p{
-			margin: 0.4em 0;
-		}
-		h3,h4{
-			font-size: 1.2em;
-		}
-	}
+  background-color: $white;
+  margin-top: 1em;
+  .company_info{
+    margin-left:10px;
+    padding:0.5em;
+    h3,h4,p{
+      margin: 0.4em 0;
+    }
+    h3,h4{
+      font-size: 1.2em;
+      color:#BBBDBE;
+    }
+    a{
+      line-height:1.2em;
+      color:#BBBDBE;
+    }
+    i.fa{
+      margin-top:10px;
+      color:#BBBDBE;
+      font-size:1.4em;
+      margin-right:0.5em;
+    }
+  }
 }
+
 
 
 
 // furnitures/show.html.erb
 #furniture_detail_top{
-	.furniture_top_img{
-		padding: 10px;
-		img{
-			width: 100%;
-		}
-	}
-	.furniture_about_text{
-		margin: 0 10px;
-		h3 {
-			color: $base_text;
-			margin: 20px 0;
-		}
-		.furniture_description{
-			color: $base_text;
-			line-height: 1.5;
-			margin-bottom: 20px;
-		}
-		.furniture_price{
-			padding-bottom: 10px;
-			color: $base_text;
-			font-size: 1.2em;
-		}
-	}
-	.good_icon{
-		font-size: 1em;
-		i{
-			color: $accent_color;
-		}
-	}
+  .furniture_top_img{
+    padding: 10px;
+    img{
+      width: 100%;
+    }
+  }
+  .furniture_about_text{
+    margin: 0 10px;
+    h3 {
+      color: $base_text;
+      margin: 20px 0;
+    }
+    .furniture_description{
+      color: $base_text;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .furniture_price{
+      padding-bottom: 10px;
+      color: $base_text;
+      font-size: 1.2em;
+    }
+  }
+  .good_icon{
+    font-size: 1em;
+    i{
+      color: $accent_color;
+    }
+  }
 }
 #kodawari{
-	.kodawari_img{
-		padding: 10px;
-		img{
-			width: 100%;
-		}
-	}
-	.kodawari_text{
-		margin: 0 10px;
-		h3 {
-			color: $base_text;
-			margin: 20px 0;
-		}
-		.kodawari_description{
-			color: $base_text;
-			line-height: 1.5;
-			margin-bottom: 20px;
-		}
-	}
+  .kodawari_img{
+    padding: 10px;
+    img{
+      width: 100%;
+    }
+  }
+  .kodawari_text{
+    margin: 0 10px;
+    h3 {
+      color: $base_text;
+      margin: 20px 0;
+    }
+    .kodawari_description{
+      color: $base_text;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+  }
 }
 
 // 購入CTA
 .purchase_block{
-	background-color: $accent_color;
-	color: $white;
-	padding: 20px 20px;
-	line-height: 1.5em;
-	margin: 30px 10px;
+  background-color: $accent_color;
+  color: $white;
+  padding: 20px 20px;
+  line-height: 1.5em;
+  margin: 30px 10px;
 }
 
 .fa-shopping-cart{
-	margin-right: 10px;
+  margin-right: 10px;
+}
+
+// furnitures/index.html.erb
+#recently_popular{
+  margin-bottom: 2.5em;
+  h2{
+    font-size: 1.3em;
+    color: $base_text;
+    margin: 1em 0.2em 0.5em;
+    font-weight:bold;
+  }
+  .recently_popular_blocks{
+    list-style: none;
+    padding: 0;
+    white-space:nowrap;
+    overflow: scroll;
+    li.product_block{
+      height: 210px;
+      width: 170px;
+      box-shadow:0 0 8px gray;
+      background-color: $white;
+      border:1px solid $gray;
+      margin: 0 1em;
+      display: inline-block;
+      .furniture_img{
+        height: 150px;
+        img{
+          width: 100%;
+          height: 150px;
+        }
+      }
+      .product_text{
+        margin: 0.5em;
+        img{
+          width: 2.6em;
+          height: 2.6em;
+          border-radius: 50%;
+        }
+        p{
+          margin-bottom:0;
+          a{
+            color:black;
+            font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+            font-weight:bold;
+            font-size:1.1em;
+          }
+        }
+        .product_kodawari_block{
+          h4{
+            margin-bottom: 0.1em;
+            font-size: 1.3em;
+          }
+          p{
+            word-break: break-all;
+            font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+            white-space: normal;
+            color: black;
+            margin-top: 0;
+            font-size: 1em;
+            margin-left: 3em;
+          }
+        }
+      }
+
+    }
+  }
 }
 
 
-#recently_popular,#category_popular{
-	margin-bottom: 2.5em;
-	h2{
-		font-size: 1.3em;
-		color: $base_text;
-		margin: 1em 0.2em 0.5em;
-	}
-	.recently_popular_blocks{
-		list-style: none;
-		padding: 0;
-		white-space:nowrap;
-		overflow: scroll;
-		li.product_block{
-			height: 300px;
-			width: 180px;
-			background-color: $white;
-			border:1px solid $gray;
-			margin: 0 0.3em;
-			display: inline-block;
-			.furniture_img{
-				margin: 0.5em;
-				height: 150px;
-				img{
-					width: 165px;
-					height: 150px;
-					border-radius: 5px;
-				}
-			}
-			.product_text{
-				margin: 0.5em;
-				img{
-					width: 2.6em;
-					height: 2.6em;
-					border-radius: 50%;
+#category_popular{
+  margin-bottom: 2.5em;
+  h2{
+    font-size: 1.3em;
+    color: $base_text;
+    margin: 1em 0.2em 0.5em;
+    font-weight:bold;
+  }
+  .recently_popular_blocks{
+    list-style: none;
+    padding: 0;
+    white-space:nowrap;
+    overflow: scroll;
+    li.category_block{
+      height: 100px;
+      width: 130px;
+      box-shadow:0 0 8px gray;
+      background-color: $white;
+      border:1px solid $gray;
+      margin: 0 1em;
+      display: inline-block;
+      .furniture_img{
+        height: 150px;
+        img{
+          width: 100%;
+          height: 70px;
+        }
+      }
+      .product_text{
+        margin: 0.5em;
+        img{
+          width: 2.6em;
+          height: 2.6em;
+          border-radius: 50%;
+        }
+        .product_category{
+          h4{
+            margin-bottom: 0.1em;
+            font-size: 1.2em;
+            font-weight:bold;
+            font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+          }
+        }
+      }
 
-				}
-				.product_kodawari_block{
-					h4{
-						margin-bottom: 0.1em;
-						font-size: 1.3em;
-					}
-					p{
-	  					word-break: break-all;
-	  					white-space: normal;
-	  					color: $gray;
-	  					margin-top: 0;
-	  					font-size: 0.9em;
-	  					margin-left: 0.1em;
-					}
-				}
-			}
+    }
+  }
+}
 
-		}
-	}
+
+#sale_block{
+  padding-left:10px;
+  padding-right:10px;
+  img{
+    width:100%;
+  }
+  .sale_title{
+    p{
+      font-size:1.2em;
+      text-align:center;
+      margin-top:10px;
+    }
+  }
+  .sale_content{
+    p{
+      text-align:center;
+
+    }
+  }
+}
+
+
+// スタッフのおすすめ商品
+
+#article{
+  margin-bottom: 2.5em;
+  padding-right: 10px;
+  padding-left: 10px;
+  h2{
+    font-size: 1.3em;
+    color: $base_text;
+    margin: 1em 0.2em 0.5em;
+    font-weight:bold;
+  }
+}
+.recommend_list{
+  margin-top:15px;
+  a{
+    font-size:1em;
+    float:right;
+    color:black;
+  }
+}
+
+
+.recently_article_blocks{
+  padding: 0;
+  white-space:nowrap;
+  .article_block{
+    height: 300px;
+    width: 100%;
+    box-shadow:0 0 8px gray;
+    background-color: $white;
+    border:1px solid $gray;
+    margin: 0;
+    display: inline-block;
+    .article_img{
+      img{
+        width:100%;
+      }
+    }
+    .article_text{
+      margin: 0.5em;
+      word-wrap: break-word;
+      white-space:normal;
+      a{
+        margin-bottom: 0.1em;
+        font-size: 1.2em;
+        font-weight:bold;
+        color:black;
+        font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+      }
+    }
+    .article_writer{
+      img{
+        width: 2.6em;
+        height: 2.6em;
+        border-radius: 50%;
+        float:left;
+        margin:0;
+        display:inline-block;
+      }
+      a{
+        vertical-align:-webkit-baseline-middle;
+        color:$base_text;
+      }
+    }
+  }
 }
 
 #sumituku_block{
-	margin-top: 3em;
-	.crator_img_block{
-		width: 98%;
-		margin: 0 auto;
-		img{
-			text-align: center;
-			width: 100%;
-		}		
-	}
-	h2{
-		text-align: center;
-		font-weight: 1.3em;
-	}
-
+  margin-top: 5em;
+  padding-right:10px;
+  padding-left:10px;
+  .crator_img_block{
+    width: 98%;
+    margin: 0 auto;
+    img{
+      text-align: center;
+      width: 100%;
+    }
+  }
+  h2{
+    text-align: center;
+    font-weight: bold;
+    font-size:1.3em;
+  }
+  p{
+    text-align: center;
+    line-height: 1.8em;
+    font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+  }
 }
+
 
 
 // furniture/new.html.erb
 #furniture_registant{
-	width: 95%;
-	margin: 1em auto;
-	h1{
-		margin-top: 0.5em;
-	}
+  width: 95%;
+  margin: 1em auto;
+  h1{
+    margin-top: 0.5em;
+  }
 }
 
 
+.creater_img_block{
+  margin-top:4em;
+  margin-bottom:4em;
+  h2{
+    text-align: center;
+    font-size:1.5em;
+  }
+  p{
+    text-align: center;
+  }
+  img{
+    width:100%;
+  }
+}
 
 
 
@@ -266,24 +455,24 @@ footer{
 
 
 @media screen and (min-width: 641px){
-	.furniture_container{
-		width: 70%;
-		margin: 0 auto;
-		#sumituku_block{
-			.crator_img_block{
-				width: 50%;
-				margin: 0 auto;
-			}
-		}
-	}
-	#furniture_detail_top,#kodawari,#delivery_size{
-		width: 65%;
-		margin: 0 auto;
-		.furniture_top_img,.kodawari_img{
-			width: 50%;
-			margin: 0 auto;
-		}
-	}
+  .furniture_container{
+    width: 70%;
+    margin: 0 auto;
+    #sumituku_block{
+      .creater_img_block{
+        width: 50%;
+        margin: 0 auto;
+      }
+    }
+  }
+  #furniture_detail_top,#kodawari,#delivery_size{
+    width: 65%;
+    margin: 0 auto;
+    .furniture_top_img,.kodawari_img{
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
 }
 
 

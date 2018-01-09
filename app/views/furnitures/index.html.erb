@@ -1,100 +1,102 @@
-      <div class="furniture_container">
-      
-      <!-- 最近の人気商品 -->
-      <!-- まだ新着順のみ -->
-        <section id="recently_popular">
-          <h2>最近の人気商品</h2>
-          <ul class="recently_popular_blocks">
-            <% @furnitures.each do |furniture| %>
-            <li class="product_block">
-              <div class="furniture_img">
-                <%= image_tag furniture.furniture_image %>
-              </div>
-              <div class="product_text">
-                <% user = User.find_by(id: furniture.user_id) %>
-                <p>
-                  <% if user.prof_img.file.nil? %>
+<div class="furniture_container">
+
+  <!-- 最近の人気商品 -->
+  <!-- まだ新着順のみ -->
+  <section id="recently_popular">
+    <h2>人気商品から探す</h2>
+    <ul class="recently_popular_blocks">
+      <% @furnitures.each do |furniture| %>
+          <li class="product_block">
+            <div class="furniture_img">
+              <%= image_tag furniture.furniture_image %>
+            </div>
+            <div class="product_text">
+              <% user = User.find_by(id: furniture.user_id) %>
+              <p>
+                <% if user.prof_img.file.nil? %>
                     <span><%= image_tag 'Gravatar-icon.png' %></span>
-                  <% else %>
+                <% else %>
                     <span><%= image_tag user.prof_img %></span>
-                  <% end %>  
-                  <%= user.username %>
-                </p>
-                <div class="product_kodawari_block">
-                  <h4><%= link_to furniture.name, furniture %></h4>            
-                  <p><%= furniture.kodawari_point %></p>
-                </div>
+                <% end %>
+                <%= link_to furniture.name, furniture %>
+              </p>
+              <div class="product_kodawari_block">
                 <p><%= furniture.price %>円</p>
               </div>
-            </li>
-            <% end %>
-          </ul>
-        </section>
+            </div>
+          </li>
+      <% end %>
+    </ul>
+  </section>
 
-        <!-- モック通りにテーブルカテゴリを表示 -->
-        <section id="category_popular">
-          <h2>テーブルの人気商品</h2>
-          <ul class="recently_popular_blocks">
-            <% @furnitures.each do |furniture| %>
-              <% if furniture.category == "table" %>
-                <li class="product_block">
-                  <div class="furniture_img">
-                    <%= image_tag furniture.furniture_image %>
-                  </div>
-                  <div class="product_text">
-                    <% user = User.find_by(id: furniture.user_id) %>
-                    <p>
-                      <% if user.prof_img.file.nil? %>
-                        <span><%= image_tag ('Gravatar-icon.png') %></span>
-                      <% else %>
-                        <span><%= image_tag user.prof_img %></span>
-                      <% end %>  
-                      <%= user.username %>
-                    </p>
-                    <div class="product_kodawari_block">
-                      <h4><%= link_to furniture.name, furniture %></h4>            
-                      <p><%= furniture.kodawari_point %></p>
-                    </div>
-                    <p><%= furniture.price %>円</p>
-                  </div>
-                </li>
-              <% end %>
-            <% end %>
-          </ul>
-        </section>
+  <!-- モック通りにテーブルカテゴリを表示 -->
+  <section id="category_popular">
+    <h2>カテゴリから探す</h2>
+    <ul class="recently_popular_blocks">
+      <% @furnitures.each do |furniture| %>
+          <% if furniture.category == "table" %>
+              <li class="category_block">
+                <div class="furniture_img">
+                  <%= image_tag furniture.furniture_image %>
+                </div>
+                <div class="product_category">
+                  <h4><%= link_to furniture.category, furniture %></h4>
+                </div>
+              </li>
+          <% end %>
+      <% end %>
+    </ul>
+  </section>
 
+  <!-- セール情報を表示 -->
+  <section id="sale_block">
+    <%= image_tag 'sale_img'%>
+    <div class="sale_title">
+      <p>オープニングセール実施中！</p>
+    </div>
+    <div class="sale_content">
+      <p>ここにセールや特集などの情報を入れる<br>
+        1~2行程度</p>
+    </div>
+  </section>
 
-    
-<!--         <section id="furniture_detail_top">
-          <%# @furnitures.each do |furniture| %>
-          <div class="furniture_top_img">
-        		<%#= image_tag furniture.furniture_image %>
-        	</div>
-
-        	<div class="furniture_about_text">
-        		<h3><%#= link_to furniture.name, furniture %></h3>
-
-        		<div class="furniture_description">
-        			<%#= furniture.furniture_about %>
-        		</div>
-
-        		<div class="furniture_price">
-        			<%#= furniture.price %>円
-        		</div>
-        	</div>
-          </p>
-          <%# end %>
-        </section> -->
-
-
-        <!-- SUMITUKUについて -->
-        <section id="sumituku_block">
-          <div class="crator_img_block">
-            <%= image_tag 'creator.jpg' %>
-          </div>
-          <h2>SUMITUKUとは</h2>
-        </section>
-
+  <!-- スタッフのおすすめ商品 -->
+  <section id="article">
+    <h2>スタッフのおすすめ商品</h2>
+    <div class="recently_article_blocks">
+      <div class="article_block">
+        <div class="article_img">
+          <p><%= image_tag 'article_thumb' %></p>
+        </div>
+        <div class="article_text">
+          <a href="#">人気のスツール工房に見学に行ってきました！</a>
+        </div>
+        <div class="article_writer">
+          <%= image_tag 'Gravatar-icon.png' %>
+          <a href="#">sumitukuスタッフ あずさ</a>
+        </div>
       </div>
-    
-<%#= link_to 'New Furniture', new_furniture_path %>
+    </div>
+
+    <% if false%>
+        <div class="recommend_list">
+          <%= link_to 'おすすめ一覧＞',articles_path %>
+        </div>
+
+    <% end %>
+    <div class="recommend_list">
+      <a href="#">おすすめ一覧＞</a>
+    </div>
+  </section>
+
+  <div class="creater_img_block">
+    <%= image_tag 'creator.jpg' %>
+    <h2>sumitukuとは?</h2>
+    <p>sumitukuは日本中のクリエイターから<br>
+      直接家具を買えるばしょです</p>
+  </div>
+</div>
+
+
+
+<%#= link_to 'New Furniture', new_furniture_path%>
