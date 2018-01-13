@@ -38,22 +38,14 @@
 </section>
 
 <section id="publish_link">
-  <!-- <div class="publish_block"> -->
-    <%= form_tag(action: :pay, method: :post) do %>
-<!--     <script
-    type="text/javascript"
-    src="https://checkout.pay.jp/"
-    class="payjp-button"
-    data-key="pk_test_508502addd5d78165fcb27a2"
-    data-text="購入手続きへ"
-    data-submit-text="購入する"
-    data-partial="true">
-  </script> -->
-      <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_508502addd5d78165fcb27a2"></script>
-    <% end %>
-  <!-- </div> -->
+  <%= form_tag(action: :pay, method: :post) do %>
+    <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_508502addd5d78165fcb27a2"></script>
+  <% end %>
 </section>
 
+  <%= form_tag(action: :payed, method: :post) do %>
+    <button>購入した（仮）</button>
+  <% end %>
 <section id="credit_card">
   <p>いますぐご利用いただけるお支払い方法</p>
   <div class="row">

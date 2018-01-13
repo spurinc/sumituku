@@ -56,6 +56,26 @@ before_action :sign_in_required, only: [:show,:user]
       redirect_to(homes_purchasedsbuy_path)
   end
 
+  def payed
+    #カートの金額を
+    user = current_user
+    total_price = 0
+    publishes = Publish.where(user_id: user.id)
+    publishes.each do |publish|
+      furniture = Furniture.find_by(id: publish.furniture_id)
+      total_price += furniture.price
+      publish.destroy
+      @purchaseds = Purchased.new(
+        user_id: user.id,
+        furniture_id: furniture.id,
+        purchased_status: 0,
+        creator: furniture.user_id
+        )
+      @purchaseds.save
+    end
+      redirect_to(homes_purchasedsbuy_path)
+  end
+
   def purchasedsbuy
     @user = current_user
     @purchaseds = Purchased.where(user_id: @user.id).order(created_at: :desc)
