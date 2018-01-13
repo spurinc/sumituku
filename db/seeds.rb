@@ -9,7 +9,6 @@
 
 # Funniture.create(id: "1",name: "テストイス",category: "chair",furniture_image: "aeronchair1.jpg",price: 7980,furniture_about: "")
 
-
 User.create(
 	email: 'test@gmail.com',
 	password: 'hogehoge',
