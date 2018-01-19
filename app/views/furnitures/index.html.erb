@@ -1,9 +1,18 @@
 <div class="furniture_container">
 
-  <!-- 最近の人気商品 -->
-  <!-- まだ新着順のみ -->
+  <!-- タップするとカテゴリ出現 -->
+  <section id="category_menu">
+    <a href="#">カテゴリー▼</a>
+  </section>
+
+  <!-- セール情報を表示 -->
+  <section id="sale_block">
+    <%= image_tag 'sale_img'%>
+  </section>
+
+  <!-- ピックアップ -->
   <section id="recently_popular">
-    <h2>人気商品から探す</h2>
+    <h2>ピックアップ</h2>
     <ul class="recently_popular_blocks">
       <% @furnitures.each do |furniture| %>
           <li class="product_block">
@@ -18,7 +27,7 @@
                 <% else %>
                     <span><%= image_tag user.prof_img %></span>
                 <% end %>
-                <%= link_to furniture.name, furniture %>
+                <%= link_to furniture.name.truncate(10), furniture %>
               </p>
               <div class="product_kodawari_block">
                 <p><%= furniture.price %>円</p>
@@ -48,17 +57,6 @@
     </ul>
   </section>
 
-  <!-- セール情報を表示 -->
-  <section id="sale_block">
-    <%= image_tag 'sale_img'%>
-    <div class="sale_title">
-      <p>オープニングセール実施中！</p>
-    </div>
-    <div class="sale_content">
-      <p>ここにセールや特集などの情報を入れる<br>
-        1~2行程度</p>
-    </div>
-  </section>
 
   <!-- スタッフのおすすめ商品 -->
   <section id="article">

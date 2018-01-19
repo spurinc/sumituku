@@ -206,6 +206,15 @@ footer{
 }
 
 // furnitures/index.html.erb
+// セール情報
+#sale_block {
+  img {
+    width: 100%;
+  }
+}
+
+
+// ピックアップ
 #recently_popular{
   margin-bottom: 2.5em;
   h2{
@@ -222,7 +231,7 @@ footer{
     li.product_block{
       height: 210px;
       width: 170px;
-      box-shadow:0 0 8px gray;
+      box-shadow:0 0 1px gray;
       background-color: $white;
       border:1px solid $gray;
       margin: 0 1em;
@@ -240,6 +249,7 @@ footer{
           width: 2.6em;
           height: 2.6em;
           border-radius: 50%;
+          float:left;
         }
         p{
           margin-bottom:0;
@@ -321,27 +331,6 @@ footer{
   }
 }
 
-
-#sale_block{
-  padding-left:10px;
-  padding-right:10px;
-  img{
-    width:100%;
-  }
-  .sale_title{
-    p{
-      font-size:1.2em;
-      text-align:center;
-      margin-top:10px;
-    }
-  }
-  .sale_content{
-    p{
-      text-align:center;
-
-    }
-  }
-}
 
 
 // スタッフのおすすめ商品
