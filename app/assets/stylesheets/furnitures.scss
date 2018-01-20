@@ -10,6 +10,7 @@
 // 共通部分
 body{
   background-color: $bg_color;
+  overflow-x:hidden;
 }
 
 
@@ -23,6 +24,140 @@ body{
   color: $gray;
 }
 
+// sp_menu関連
+.on_wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  -webkit-transition: .3s;
+  transition: .3s;
+  visibility: hidden;
+}
+
+.l_header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  -webkit-transition: .3s;
+  transition: .3s;
+  background-color:white;
+}
+
+.is_active .l_header {
+  left: 220px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.is_active .wrap {
+  left: 220px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.is_active .on_wrap {
+  position: fixed;
+  left: 220px;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  overflow: hidden;
+  visibility: visible;
+  -webkit-transition: .3s;
+  transition: .3s;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.35);
+}
+
+.is_active .l_nav {
+  position: fixed;
+  height: 100%;
+  left: 0;
+  overflow-y: auto;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+.l_nav {
+  background: #fff;
+  width: 220px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: -220px;
+  z-index: 1000;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+.nav_menu{
+  padding: 0;
+  list-style: none;
+}
+
+.l_nav .nav_menu a {
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  display: block;
+  padding: 15px 0px 15px 15px;
+  color: #333;
+}
+
+.l_nav .nav_menu .nav_list_inner {
+  position: relative;
+  i.fa-user-o{
+    margin-right:5px;
+  }
+}
+
+.sp_menu{
+  background-color:#F7F7F7;
+}
+
+
+// 検索フォーム
+.search-form {
+  button {
+    background-color: white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    height: 30px;
+    margin-top: 5px;
+  }
+  .input-group {
+    width: 220px;
+    height: 40px;
+    background-color:white;
+    input#search {
+      font-size: 1em;
+      width: 80%;
+      height: 35px;
+      border: solid 1px gray;
+      border-radius: 15px;
+      margin: 1px;
+    }
+    input#search::-webkit-input-placeholder {
+      font-size: 0.8em;
+      word-wrap: break-word;
+      white-space: normal;
+    }
+    input#search:-ms-input-placeholder {
+      font-size: 0.8em;
+      word-wrap: break-word;
+      white-space: normal;
+    }
+    input#search::-moz-placeholder {
+      font-size: 0.8em;
+      word-wrap: break-word;
+      white-space: normal;
+    }
+  }
+}
+
+
+// menu関連
 nav{
   background-color: $white;
   height:1.5em;
@@ -35,63 +170,28 @@ nav{
     img{
       text-align:center;
       width:auto;
-      height:60px;
+      height:50px;
     }
   }
   i.fa-bars{
     display:inline-block;
     float:left;
     font-size:20px;
-    margin-top:20px;
-    margin-left:20px
+    margin-left:20px;
+    margin-top:15px;
+    cursor:pointer;
   }
   .cart{
     float:right;
+    margin-top:5px;
     img{
       width:auto;
-      height:50px;
+      height:35px;
       -webkit-border-radius: 50px;
       -moz-border-radius: 50px;
       border-radius: 50px;
     }
   }
-  button{
-    background-color:white;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    height:30px;
-    margin-top:5px;
-  }
-  .input-group{
-    width:240px;
-    height:40px;
-    border:0.5px solid $gray;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
-    input#search{
-      font-size:1em;
-      width:80%;
-      height:35px;
-    }
-    input#search::-webkit-input-placeholder{
-      font-size:0.8em;
-      word-wrap: break-word;
-      white-space:normal;
-    }
-    input#search:-ms-input-placeholder{
-      font-size:0.8em;
-      word-wrap: break-word;
-      white-space:normal;
-    }
-    input#search::-moz-placeholder{
-      font-size:0.8em;
-      word-wrap: break-word;
-      white-space:normal;
-    }
-  }
-
 }
 
 .furniture_block{
@@ -206,6 +306,16 @@ footer{
 }
 
 // furnitures/index.html.erb
+
+
+// タップするとカテゴリ出現
+#category_menu{
+  margin-left:0.5em;
+  a{
+    color:black;
+  }
+}
+
 // セール情報
 #sale_block {
   img {
@@ -442,6 +552,8 @@ footer{
 .creater_img_block{
   margin-top:4em;
   margin-bottom:4em;
+  padding-left: 10px;
+  padding-right: 10px;
   h2{
     text-align: center;
     font-size:1.5em;
