@@ -40,16 +40,17 @@
 
   <!-- モック通りにテーブルカテゴリを表示 -->
   <section id="category_popular">
-    <h2>カテゴリから探す</h2>
+    <h2>人気のカテゴリ</h2>
     <ul class="recently_popular_blocks">
-      <% @furnitures.each do |furniture| %>
+      <% @furnitures.first(4).each do |furniture| %>
           <% if furniture.category == "table" %>
               <li class="category_block">
                 <div class="furniture_img">
                   <%= image_tag furniture.furniture_image %>
-                </div>
-                <div class="product_category">
-                  <h4><%= link_to furniture.category, furniture %></h4>
+                  <div class="product_category">
+                    <!-- reboot.scssに邪魔されるため、ハードコーディング -->
+                    <h4><%= link_to furniture.category, furniture,:style=>"color:black; margin-left:0.5em;" %></h4>
+                  </div>
                 </div>
               </li>
           <% end %>
