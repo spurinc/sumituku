@@ -22,20 +22,18 @@
     <ul class="nav_menu">
       <li>
         <div class="nav_list_inner">
-          <a href="">
-            <i class="fa fa-user-o" aria-hidden="true"></i>
-            ログイン
-          </a>
+          <i class="fa fa-user-o" aria-hidden="true"></i>
+          <%= link_to 'ログイン',new_user_session_path,:style=>"margin-left: 15px;" %>
         </div>
       </li>
       <li>
         <div class="nav_list_inner">
-          <a href="">会員登録(無料)</a>
+          <%= link_to '会員登録(無料)',new_user_registration_path %>
         </div>
       </li>
       <li>
         <div class="nav_list_inner">
-          <a href="">初めての方</a>
+          <%= link_to '初めての方',service_about_path %>
         </div>
       </li>
       <li>
@@ -59,6 +57,11 @@
         </div>
       </li>
     </ul>
+  </div>
+  <div class="sns">
+    <i class="fa fa-twitter"></i>
+    <i class="fa fa-facebook"></i>
+    <i class="fa fa-instagram"></i>
   </div>
 </div>
 
@@ -119,13 +122,8 @@
     <p><a href="#">利用規約</a></p>
     <p><a href="#">プライバシーポリシー</a></p>
     <p><a href="#">サイトマップ</a></p>
-    <i class="fa fa-twitter"></i>
-    <i class="fa fa-facebook"></i>
-    <i class="fa fa-instagram"></i>
-
-    <h4>株式会社SPUR</h4>
+    <p><a href="#">お問い合わせ</a></p>
     <p><a href="#">会社概要</a></p>
-    <p><%= link_to 'アバウト', :controller=>'service_about', :action=>'main' %></p>
   </div>
 </footer>
 
