@@ -10,7 +10,7 @@ class PurchasedsController < ApplicationController
 
 	def update
 		@purchased = Purchased.find_by(id: params[:id])
-		binding.pry
+		# binding.pry
 		@purchased.purchased_status = params[:purchased][:purchased_status]
 		@purchased.save
 		redirect_to(homes_purchasedscreator_path)

@@ -31,6 +31,7 @@ before_action :sign_in_required, only: [:show,:user]
 
   def pay
     #カートの金額を
+    # binding.pry
     user = current_user
     total_price = 0
     publishes = Publish.where(user_id: user.id)
@@ -47,7 +48,7 @@ before_action :sign_in_required, only: [:show,:user]
       @purchaseds.save
     end
     Payjp.api_key = 'sk_test_680f07880976f1207457ef20'
-    # binding.pry
+    total_price
     charge = Payjp::Charge.create(
       :amount => total_price,
       :card => params['payjp-token'],

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get 'homes/favorites' => 'homes#favorites'
   get 'homes/carts' => 'homes#carts'
   post 'homes/carts/pay' => 'homes#pay'
-  post 'homes/carts/pay' => 'homes#payed' #仮
+  post 'homes/carts/payed' => 'homes#payed' #仮
   get 'homes/purchasedsbuy' => 'homes#purchasedsbuy'
   get 'homes/purchasedscreator' => 'homes#purchasedscreator'
 
