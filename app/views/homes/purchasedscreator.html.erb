@@ -31,7 +31,8 @@
             <tr>
               <th>購入日時</th>
               <td class="publish_detail_text">
-                <%= purchaseds.created_at.strftime('%Y/%m/%d %H:%m') %>
+                <%= purchaseds.created_at.strftime("%Y/%m/%d %H:%m") %>
+                <%#= time_ago_in_words(purchaseds.created_at) %>
               </td>
             </tr>
             <tr>
