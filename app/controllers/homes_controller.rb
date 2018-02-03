@@ -22,5 +22,12 @@ before_action :sign_in_required, only: [:show,:user]
     @favorites = Favorite.where(user_id: @user.id)
   end
 
+  def carts
+    @user = current_user
+    @carts = Cart.where(user_id: @user.id)
+    @total_price = 0
+  end
+
+
 end
 

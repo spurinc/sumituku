@@ -1,0 +1,65 @@
+<section id="cart_block">
+  <h2>カート中の商品</h2>
+
+    <% @carts.each do |cart| %>
+      <% furniture = Furniture.find_by(id: cart.furniture_id) %>
+      <table class="cart_solo_table">
+        <tbody>
+          <tr>
+            <th>商品名</th>
+            <td><%= image_tag furniture.furniture_image %>
+              <%= link_to furniture.name, furniture %></td>
+          </tr>
+          <tr>
+            <th>小計</th>
+            <td class="publish_detail_text"><%= furniture.price %>円</td>
+            <% @total_price += furniture.price %>
+          </tr>
+          <tr>
+            <th></th>
+            <td><%= link_to("削除", "/cart/#{furniture.id}/destroy", {method: "post"}) %></td>
+          </tr>
+        </tbody>
+      </table>
+    <% end %>
+</section>
+
+<section id="cart_sum">
+  <div class="cart_sum_block">
+    <table>
+      <tbody>
+        <tr>
+          <th>合計：</th>
+          <td><%= @total_price %>円</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="publish_link">
+  <!-- <div class="publish_block"> -->
+    <%#= form_tag(action: :pay, method: :post) do %>
+<!--     <script
+    type="text/javascript"
+    src="https://checkout.pay.jp/"
+    class="payjp-button"
+    data-key="pk_test_508502addd5d78165fcb27a2"
+    data-text="購入手続きへ"
+    data-submit-text="購入する"
+    data-partial="true">
+  </script> -->
+      <!-- <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_508502addd5d78165fcb27a2"></script> -->
+    <%# end %>
+  <!-- </div> -->
+</section>
+
+<section id="credit_card">
+  <p>いますぐご利用いただけるお支払い方法</p>
+  <div class="row">
+    <div class="col-xs-12 col-sm-3 credit_title"><p>クレジットカード</p></div>
+    <div class="col-xs-12 col-sm-9 credit_list">
+      <%= image_tag 'card_m_all.gif' %>
+    </div>
+  </div>
+</section>
