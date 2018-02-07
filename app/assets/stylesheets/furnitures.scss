@@ -10,6 +10,7 @@
 // 共通部分
 body{
   background-color: $bg_color;
+  overflow-x:hidden;
 }
 
 
@@ -23,61 +24,190 @@ body{
   color: $gray;
 }
 
+// sp_menu関連
+.on_wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  -webkit-transition: .3s;
+  transition: .3s;
+  visibility: hidden;
+}
+
+.l_header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  -webkit-transition: .3s;
+  transition: .3s;
+  background-color:white;
+}
+
+.is_active .l_header {
+  left: 220px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.is_active .wrap {
+  left: 220px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.is_active .on_wrap {
+  position: fixed;
+  left: 220px;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  overflow: hidden;
+  visibility: visible;
+  -webkit-transition: .3s;
+  transition: .3s;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.35);
+}
+
+.is_active .l_nav {
+  position: fixed;
+  height: 100%;
+  left: 0;
+  overflow-y: auto;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+.l_nav {
+  background: #fff;
+  width: 220px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: -220px;
+  z-index: 1000;
+  -webkit-transition: .3s;
+  transition: .3s;
+  .sns{
+    position: absolute;
+    bottom:0;
+    margin-left:10px;
+    i.fa{
+      margin-top:10px;
+      color:#BBBDBE;
+      font-size:1.4em;
+      margin-right:0.5em;
+    }
+  }
+}
+
+.nav_menu{
+  padding: 0;
+  list-style: none;
+}
+
+.l_nav .nav_menu a {
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  display: block;
+  padding: 15px 0px 15px 15px;
+  color: #333;
+}
+
+.l_nav .nav_menu .nav_list_inner {
+  position: relative;
+  i.fa-user-o{
+    margin-right:5px;
+    position: absolute;
+    margin-top: 1.2em;
+    margin-left: 10px;
+  }
+}
+
+.sp_menu{
+  background-color:#F7F7F7;
+}
+
+
+// 検索フォーム
+.search-form {
+  button {
+    background-color: white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    height: 30px;
+    margin-top: 5px;
+  }
+  .input-group {
+    width: 220px;
+    height: 40px;
+    background-color:white;
+    input#search {
+      font-size: 1em;
+      width: 80%;
+      height: 35px;
+      border: solid 1px gray;
+      border-radius: 15px;
+      margin: 1px;
+    }
+    input#search::-webkit-input-placeholder {
+      font-size: 0.8em;
+      word-wrap: break-word;
+      white-space: normal;
+    }
+    input#search:-ms-input-placeholder {
+      font-size: 0.8em;
+      word-wrap: break-word;
+      white-space: normal;
+    }
+    input#search::-moz-placeholder {
+      font-size: 0.8em;
+      word-wrap: break-word;
+      white-space: normal;
+    }
+  }
+}
+
+
+// menu関連
 nav{
   background-color: $white;
-  height:30px;
+  height:1.5em;
   margin-top:0.5em;
   margin-bottom:2em;
   padding-right:10px;
   padding-left:10px;
   h1.logo{
-    font-size: 1em;
-    font-weight: 300;
     display: inline;
-    line-height: 1.5em;
-    width:50px;
+    img{
+      text-align:center;
+      width:auto;
+      height:50px;
+    }
+  }
+  i.fa-bars{
+    display:inline-block;
     float:left;
-    a {
-      color: $gray;
-    }
+    font-size:20px;
+    margin-left:20px;
+    margin-top:15px;
+    cursor:pointer;
   }
-  button{
-    background-color:white;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    height:30px;
+  .cart{
+    float:right;
     margin-top:5px;
-  }
-  .input-group{
-    width:240px;
-    height:40px;
-    border:0.5px solid $gray;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
-    input#search{
-      font-size:1em;
-      width:80%;
+    margin-right:10px;
+    img{
+      width:auto;
       height:35px;
-    }
-    input#search::-webkit-input-placeholder{
-      font-size:0.8em;
-      word-wrap: break-word;
-      white-space:normal;
-    }
-    input#search:-ms-input-placeholder{
-      font-size:0.8em;
-      word-wrap: break-word;
-      white-space:normal;
-    }
-    input#search::-moz-placeholder{
-      font-size:0.8em;
-      word-wrap: break-word;
-      white-space:normal;
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+      border-radius: 50px;
     }
   }
-
 }
 
 .furniture_block{
@@ -112,12 +242,6 @@ footer{
     a{
       line-height:1.2em;
       color:#BBBDBE;
-    }
-    i.fa{
-      margin-top:10px;
-      color:#BBBDBE;
-      font-size:1.4em;
-      margin-right:0.5em;
     }
   }
 }
@@ -192,6 +316,25 @@ footer{
 }
 
 // furnitures/index.html.erb
+
+
+// タップするとカテゴリ出現
+#category_menu{
+  margin-left:0.5em;
+  a{
+    color:black;
+  }
+}
+
+// セール情報
+#sale_block {
+  img {
+    width: 100%;
+  }
+}
+
+
+// ピックアップ
 #recently_popular{
   margin-bottom: 2.5em;
   h2{
@@ -208,7 +351,7 @@ footer{
     li.product_block{
       height: 210px;
       width: 170px;
-      box-shadow:0 0 8px gray;
+      box-shadow:0 0 1px gray;
       background-color: $white;
       border:1px solid $gray;
       margin: 0 1em;
@@ -226,6 +369,7 @@ footer{
           width: 2.6em;
           height: 2.6em;
           border-radius: 50%;
+          float:left;
         }
         p{
           margin-bottom:0;
@@ -258,6 +402,8 @@ footer{
 }
 
 
+// 人気のカテゴリ
+
 #category_popular{
   margin-bottom: 2.5em;
   h2{
@@ -269,21 +415,21 @@ footer{
   .recently_popular_blocks{
     list-style: none;
     padding: 0;
-    white-space:nowrap;
-    overflow: scroll;
+    font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
     li.category_block{
-      height: 100px;
-      width: 130px;
-      box-shadow:0 0 8px gray;
+      height: 150px;
+      width: 170px;
+      box-shadow:0 0 3px gray;
       background-color: $white;
       border:1px solid $gray;
-      margin: 0 1em;
+      margin: 0 0.5em;
       display: inline-block;
+      margin-bottom:30px;
       .furniture_img{
         height: 150px;
         img{
           width: 100%;
-          height: 70px;
+          height: 110px;
         }
       }
       .product_text{
@@ -294,11 +440,11 @@ footer{
           border-radius: 50%;
         }
         .product_category{
+          margin-left:0.5em;
           h4{
             margin-bottom: 0.1em;
             font-size: 1.2em;
             font-weight:bold;
-            font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
           }
         }
       }
@@ -307,28 +453,59 @@ footer{
   }
 }
 
+// chromeのレスポンシブ画面用のCSS
 
-#sale_block{
-  padding-left:10px;
-  padding-right:10px;
-  img{
-    width:100%;
-  }
-  .sale_title{
-    p{
-      font-size:1.2em;
-      text-align:center;
-      margin-top:10px;
+@media screen and( max-width:320px)
+{
+  #category_popular{
+    margin-bottom: 2.5em;
+    h2{
+      font-size: 1.3em;
+      color: $base_text;
+      margin: 1em 0.2em 0.5em;
+      font-weight:bold;
     }
-  }
-  .sale_content{
-    p{
-      text-align:center;
+    .recently_popular_blocks{
+      list-style: none;
+      padding: 0;
+      font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+      li.category_block{
+        height: 150px;
+        width: 145px;
+        box-shadow:0 0 3px gray;
+        background-color: $white;
+        border:1px solid $gray;
+        margin: 0 0.5em;
+        display: inline-block;
+        margin-bottom:30px;
+        .furniture_img{
+          height: 150px;
+          img{
+            width: 100%;
+            height: 110px;
+          }
+        }
+        .product_text{
+          margin: 0.5em;
+          img{
+            width: 2.6em;
+            height: 2.6em;
+            border-radius: 50%;
+          }
+          .product_category{
+            margin-left:0.5em;
+            h4{
+              margin-bottom: 0.1em;
+              font-size: 1.2em;
+              font-weight:bold;
+            }
+          }
+        }
 
+      }
     }
   }
 }
-
 
 // スタッフのおすすめ商品
 
@@ -437,6 +614,8 @@ footer{
 .creater_img_block{
   margin-top:4em;
   margin-bottom:4em;
+  padding-left: 10px;
+  padding-right: 10px;
   h2{
     text-align: center;
     font-size:1.5em;
@@ -474,7 +653,3 @@ footer{
     }
   }
 }
-
-
-
-// kodawari
