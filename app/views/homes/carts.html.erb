@@ -1,6 +1,5 @@
 <section id="cart_block">
   <h2>カート中の商品</h2>
-
     <% @publishes.each do |publish| %>
       <% furniture = Furniture.find_by(id: publish.furniture_id) %>
       <table class="cart_solo_table">
@@ -38,15 +37,12 @@
 </section>
 
 <section id="publish_link">
+
   <%= form_tag(action: :pay, method: :post) do %>
     <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_508502addd5d78165fcb27a2"></script>
   <% end %>
 </section>
 
-  <%#= form_tag(action: :payed, method: :post) do %>
-    <!-- <input type="button" value="購入した（仮）"> -->
-    <!-- <button>購入（仮）</button> -->
-  <%# end %>
 <section id="credit_card">
   <p>いますぐご利用いただけるお支払い方法</p>
   <div class="row">

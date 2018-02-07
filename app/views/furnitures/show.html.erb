@@ -44,6 +44,7 @@
 	</div>
 	<!-- 購入CTA -->
 	<div class="purchase_block">
+<<<<<<< HEAD
 		<% if user_signed_in? %>
 			<%# if Publish.find_by(user_id: current_user.id, furniture_id: @furniture.id) %>
 				<%#= link_to("/publishes/#{@furniture.id}/destroy",{method: "post"}) do %>
@@ -57,13 +58,24 @@
 				<span>カートに進む</span>
 			<% end %>
 			<%# end %>
+=======
+		<p><% if user_signed_in? %>
+			<%= link_to "/cart/#{@furniture.id}/create",{method:"post"} do %>
+				<i class="fa fa-shopping-cart" aria-hidden="true" ></i>
+				<span>カートに進む</span>
+			<% end %>
+>>>>>>> 676374e42ab46a3842e907a65e3228efb4e727f3
 		<% else %>
 				<%= link_to new_user_registration_path do %>
   				<p class="good_icon">
   					<i class="fa fa-heart-o" aria-hidden="true"></i>カートに進む
   				</p>
 			  <% end %>
+<<<<<<< HEAD
 		<% end %>
+=======
+		<% end %></p>
+>>>>>>> 676374e42ab46a3842e907a65e3228efb4e727f3
 	</div>
 </section>
 
