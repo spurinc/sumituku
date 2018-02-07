@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180102192031) do
+ActiveRecord::Schema.define(version: 20180203035224) do
+
+  create_table "carts", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "furniture_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["furniture_id"], name: "index_carts_on_furniture_id"
+    t.index ["user_id"], name: "index_carts_on_user_id"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -43,6 +52,23 @@ ActiveRecord::Schema.define(version: 20180102192031) do
     t.text "size"
     t.text "delivery"
     t.integer "user_id"
+  end
+
+  create_table "publishes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "furniture_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "purchaseds", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "furniture_id"
+    t.integer "purchased_status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "creator"
+    t.boolean "agreement", default: false, null: false
   end
 
   create_table "users", force: :cascade do |t|

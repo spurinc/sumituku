@@ -1,0 +1,121 @@
+// Place all the styles related to the Cart controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "./variables";
+
+#cart_block{
+	width: 95%;
+	margin: 0 auto;
+	padding-top: 1em;
+	h2{
+		text-align: center;
+		color: $white;
+		background-color: $gray;
+		padding: 0.5em;
+		font-size: 1.2em;
+	}
+	table{
+		margin: 2em 0;
+		border: 1px solid $gray;
+		tbody{
+			tr{
+				clear: both;
+				overflow: hidden;
+				border-bottom: 1px solid $gray;
+				padding: 0.3em;
+				th{
+					width: 20%;
+					line-height: 1em;
+					vertical-align: middle;
+					padding: 0.3em;
+				}
+				td{
+					width: 75%;
+					text-align: right;
+					line-height: 1.4em;
+					vertical-align: middle;
+					padding: 0.5em 0.2em;
+					img{
+						max-width: 50%;
+					}
+				}
+				.publish_detail_text{
+					font-size: 1em;
+				}
+				td.buyer_img_block{
+					img{
+						border-radius: 100%;
+						max-width: 55px;
+						height: 55px;
+					}
+				}
+			}
+		}
+	}
+}
+#cart_sum{
+	.cart_sum_block{
+		background-color: #ffccfb;
+		color: #000;
+		width: 95%;
+		margin: 0 auto;
+		padding: 1em;
+		table{
+			width: 95%;
+			tbody{
+				tr{
+					th{
+						width: 50%;
+						font-size: 1.15em;
+					}
+					td{
+						width: 50%;
+						text-align: right;
+						font-size: 1.15em;
+					}
+				}
+			}
+		}
+	}
+}
+
+#publish_link{
+	width: 95%;
+	margin: 1.5em auto;
+	text-align: center;
+	.publish_block{
+		border: 2px solid #f791ee;
+		border-radius: 5px;
+		color: #f791ee;
+		text-align: center;
+		p{
+			font-size: 1.2em;
+			line-height: 1.2em;
+			vertical-align: middle;
+			margin: 0.5em 0;
+		}
+	}
+}
+#credit_card{
+	width: 95%;
+	margin: 0 auto;
+	.row{
+		border: 1px solid $gray;
+		margin: 0 auto;
+		.credit_title{
+			 background-color: $bg_color;
+			 border: $gray;
+			 p{
+			 	font-size: 1.1em;
+			 	margin: 0.5em 0;
+			 }
+		}
+		.credit_list{
+			img{
+				margin: 0.5em 0;
+				max-width: 100%;
+			}
+		}
+	}
+}
