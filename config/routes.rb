@@ -14,13 +14,10 @@ Rails.application.routes.draw do
   get 'homes/myproduct'
   get 'homes/favorites' => 'homes#favorites'
   get 'homes/carts' => 'homes#carts'
-<<<<<<< HEAD
   post 'homes/carts/pay' => 'homes#pay'
   post 'homes/carts/payed' => 'homes#payed' #仮
   get 'homes/purchasedsbuy' => 'homes#purchasedsbuy'
   get 'homes/purchasedscreator' => 'homes#purchasedscreator'
-=======
->>>>>>> 676374e42ab46a3842e907a65e3228efb4e727f3
 
   # 家具のパスを設定
   resources :furnitures
@@ -42,7 +39,6 @@ Rails.application.routes.draw do
   post "/favorites/:furniture_id/create" => "favorites#create"
   post "/favorites/:furniture_id/destroy" => "favorites#destroy"
 
-<<<<<<< HEAD
 
   # カート
   post "/publishes/:furniture_id/create" => "publishes#create"
@@ -52,11 +48,6 @@ Rails.application.routes.draw do
   # post "/purchaseds/:furniture_id/create" => "purchaseds#create"
   post "/purchaseds/:id" => "purchaseds#update"
   post "/purchaseds/:furniture_id/destroy" => "purchaseds#destroy"  
-=======
-  # カート
-  post "/cart/:furniture_id/create" => "cart#create"
-  post "/cart/:furniture_id/destroy" => "cart#destroy"
->>>>>>> 676374e42ab46a3842e907a65e3228efb4e727f3
 
   # サービスアバウト
   get 'service_about' => 'service_about#main'

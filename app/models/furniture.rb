@@ -1,9 +1,4 @@
 class Furniture < ApplicationRecord
-<<<<<<< HEAD
-  
-=======
-  has_many :carts
->>>>>>> 676374e42ab46a3842e907a65e3228efb4e727f3
   # carrierwaveを使用
   # 家具のtop画像
 	 mount_uploader :furniture_image, ImageUploader

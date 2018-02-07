@@ -25,7 +25,6 @@ before_action :sign_in_required, only: [:show,:user]
 
   def carts
     @user = current_user
-<<<<<<< HEAD
     @publishes = Publish.where(user_id: @user.id)
     @total_price = 0
   end
@@ -86,12 +85,5 @@ before_action :sign_in_required, only: [:show,:user]
   def purchasedscreator
     @purchaseds = Purchased.where(creator: current_user.id).order(created_at: :desc)
   end
-=======
-    @carts = Cart.where(user_id: @user.id)
-    @total_price = 0
-  end
-
-
->>>>>>> 676374e42ab46a3842e907a65e3228efb4e727f3
 end
 
