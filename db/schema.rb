@@ -68,7 +68,6 @@ ActiveRecord::Schema.define(version: 20180203035224) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "creator"
-    t.boolean "agreement", default: false, null: false
   end
 
   create_table "users", force: :cascade do |t|
