@@ -54,7 +54,7 @@ before_action :sign_in_required, only: [:show,:user]
       :card => params['payjp-token'],
       :currency => 'jpy',
     )
-      redirect_to(homes_purchasedsbuy_path)
+      redirect_to(homes_thanks_path)
   end
 
   def payed
