@@ -58,5 +58,8 @@ Rails.application.routes.draw do
   get 'category/list'
   get 'category/subject'
 
+  # 利用規約ページの追加
+  # get 'rules/'
+
 
 end
