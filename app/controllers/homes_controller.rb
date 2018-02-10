@@ -77,6 +77,9 @@ before_action :sign_in_required, only: [:show,:user]
       redirect_to(homes_purchasedsbuy_path)
   end
 
+  def thanks
+  end
+
   def purchasedsbuy
     @user = current_user
     @purchaseds = Purchased.where(user_id: @user.id).order(created_at: :desc)
