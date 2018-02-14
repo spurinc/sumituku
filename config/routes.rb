@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   post 'homes/carts/payed' => 'homes#payed' #仮
   get 'homes/purchasedsbuy' => 'homes#purchasedsbuy'
   get 'homes/purchasedscreator' => 'homes#purchasedscreator'
+  get 'homes/thanks' => 'homes#thanks'
 
   # 家具のパスを設定
   resources :furnitures

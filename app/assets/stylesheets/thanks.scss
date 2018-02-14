@@ -1,0 +1,13 @@
+// thanksページ
+@import "./variables";
+
+#thanks{
+	text-align: center;
+	.thanks_message{
+		margin-top: 1.5em;
+		margin-bottom: 3em;
+		p{
+			font-size: 1em;
+		}
+	}
+}
