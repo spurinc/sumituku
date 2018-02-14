@@ -59,5 +59,9 @@ Rails.application.routes.draw do
   get 'category/list'
   get 'category/subject'
 
+  # 利用規約ページの追加
+  get 'rules/terms'
+  get 'rules/privacypolicy'
+
 
 end
